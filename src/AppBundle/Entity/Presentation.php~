@@ -37,7 +37,7 @@ class Presentation
     private $titre;
 
     /**
-     * @Gedmo\Slug(fields={"title", "rubrique"})
+     * @Gedmo\Slug(fields={"titre"})
      * @ORM\Column(length=128, unique=true)
      */
     private $slug;
@@ -101,6 +101,11 @@ class Presentation
      * @ORM\Column(name="statut", type="boolean", nullable=true)
      */
     private $statut;
+
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\ImgPresentation", cascade={"persist", "remove"})
+     */
+     private $image;
 
 
     /**
@@ -351,5 +356,29 @@ class Presentation
     public function getStatut()
     {
         return $this->statut;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Presentation
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

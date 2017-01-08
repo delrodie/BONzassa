@@ -258,3 +258,6 @@ Ainsi nous avons comme MLD
 
     Mise a jour de la classe Presentation avec insertion de Sluggable
     ** - [*- https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/sluggable.md -*]
+
+    Generation crud de la classe Presentation
+    ** - [*- php bin/console doctrine:generate:crud AppBundle:Presentation -*]
