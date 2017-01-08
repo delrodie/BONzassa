@@ -36,6 +36,7 @@
       <!-- END THEME GLOBAL STYLES -->
 
       <link href="{{ asset('ressources/vendor/css/layout.min.css') }}" rel="stylesheet" type="text/css" />
+      <link href="{{ asset('ressources/css/bo.css') }}" rel="stylesheet" type="text/css" />
 
       {% endblock %}
     </head>
@@ -60,8 +61,9 @@
                             </button>
                             <!-- End Toggle Button -->
                             <!-- BEGIN LOGO -->
-                            <a id="index" class="page-logo" href="index.html">
-                                BackOffice<img src="../assets/layouts/layout5/img/logo.png" alt="Logo"> </a>
+                            <a id="index" class="page-logo MonLogo" href="index.html">
+                                BackOffice
+                            </a>
                             <!-- END LOGO -->
                             <!-- BEGIN SEARCH -->
                             <form class="search" action="extra_search.html" method="GET">
@@ -78,7 +80,7 @@
                                     <button type="button" class="btn btn-sm md-skip dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                         <span>
                                           {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                                            {{ 'layout.hello'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} 
+                                            {{ 'layout.hello'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
                                           {% endif %}
                                         </span>
                                         <img src="{{ asset('ressources/images/avatar.png')}}" alt=""> </button>
@@ -124,12 +126,21 @@
                                         <i class="icon-folder"></i> Rubriques </a>
                                     <ul class="dropdown-menu dropdown-menu-fw">
                                         <li class="">
-                                            <a href="{{ path('admin_rubrique_index')}}">
-                                            <i class="fa fa-list" aria-hidden="true"></i> Listes </a>
+                                            <a href="#">
+                                            <i class="fa fa-home" aria-hidden="true"></i> Accueil </a>
                                         </li>
-                                        <li>
-                                            <a href="{{ path('admin_rubrique_new') }}">
-                                            <i class="fa fa-plus"></i> Ajouter </a>
+                                        <li class="dropdown more-dropdown-sub">
+                                            <a href="javascript:;"> Qui sommes-nous? </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#"> Présentation </a></li>
+                                                <li><a href="#"> Equipe </a></li>
+                                                <li><a href="#"> Investisseur </a></li>
+                                                <li><a href="#"> Formateurs/Encadreurs </a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="">
+                                            <a href="#">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i> Contact </a>
                                         </li>
                                     </ul>
                                 </li>
@@ -205,10 +216,10 @@
       {% block javascripts %}
 
       <!--[if lt IE 9]>
-<script src="../assets/global/plugins/respond.min.js"></script>
-<script src="../assets/global/plugins/excanvas.min.js"></script>
-<script src="../assets/global/plugins/ie8.fix.min.js"></script>
-<![endif]-->
+      <script src="{{ asset('ressources/vendor/js/ie/respond.min.js') }}"></script>
+      <script src="{{ asset('ressources/vendor/js/ie/excanvas.min.js') }}"></script>
+      <script src="{{ asset('ressources/vendor/js/ie/ie8.fix.min.js') }}"></script>
+      <![endif]-->
       <!-- BEGIN CORE PLUGINS -->
       <script src="{{ asset('ressources/vendor/js/jquery.min.js') }}" type="text/javascript"></script>
       <script src="{{ asset('ressources/vendor/js/bootstrap.min.js') }}" type="text/javascript"></script>
