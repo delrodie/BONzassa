@@ -245,3 +245,16 @@ Ainsi nous avons comme MLD
 7°/ **Installation de StofDoctrineExtensionsBundle**
     Installation de StofDoctrineExtensionsBundle
     ** - [*- https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/symfony2.md -*]
+
+8°/ **Gestion de la rubrique Presentation**
+    Creation de la classe Presentation
+    ** - [*- php bin/console doctrine:generate:entity AppBundle:Presentation -*]
+
+    Mise a jour de la classe Presentation avec insertion de Timestampable
+    ** - [*- https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/timestampable.md -*]
+
+    Mise a jour de la classe Presentation avec insertion de Blameable
+    ** - [*- https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/blameable.md -*]
+
+    Mise a jour de la classe Presentation avec insertion de Sluggable
+    ** - [*- https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/sluggable.md -*]
