@@ -88,7 +88,7 @@ class AvantageController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_avantage_edit', array('slug' => $avantage->getSlug()));
+            return $this->redirectToRoute('admin_avantage_show', array('slug' => $avantage->getSlug()));
         }
 
         return $this->render('avantage/edit.html.twig', array(
