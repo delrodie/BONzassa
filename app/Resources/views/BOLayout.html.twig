@@ -132,29 +132,12 @@
                                         <li class="dropdown more-dropdown-sub">
                                             <a href="javascript:;"> Qui sommes-nous? </a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="#"> Présentation </a></li>
-                                                <li><a href="#"> Equipe </a></li>
-                                                <li><a href="#"> Investisseur </a></li>
-                                                <li><a href="#"> Formateurs/Encadreurs </a></li>
+                                              {{ render(url('menu_presentation')) }}
                                             </ul>
                                         </li>
                                         <li class="">
                                             <a href="#">
                                             <i class="fa fa-envelope" aria-hidden="true"></i> Contact </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown dropdown-fw dropdown-fw-disabled  ">
-                                    <a href="javascript:;" class="text-uppercase">
-                                        <i class="icon-doc"></i> Articles </a>
-                                   <ul class="dropdown-menu dropdown-menu-fw">
-                                        <li class="">
-                                            <a href="{{ path('admin_article_index')}}">
-                                            <i class="fa fa-list" aria-hidden="true"></i> Listes </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ path('admin_article_new')}}">
-                                            <i class="fa fa-plus"></i> Ajouter </a>
                                         </li>
                                     </ul>
                                 </li>
@@ -184,6 +167,28 @@
                                         <li>
                                             <a href="{{ path('admin_group_index')}}">
                                             <i class="fa fa-users"></i> Groupe </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-fw dropdown-fw-disabled  ">
+                                    <a href="javascript:;" class="text-uppercase">
+                                        <i class="fa fa-cogs"></i> Paramètres </a>
+                                    <ul class="dropdown-menu dropdown-menu-fw">
+                                        <li class="">
+                                            <a href="{{ path('admin_presentation_new')}}">
+                                            <i class="fa fa-plus" aria-hidden="true"></i> Presentation </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                            <i class="fa fa-plus"></i> Avantages </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                            <i class="fa fa-plus"></i> Communauté </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                            <i class="fa fa-plus"></i> Contact </a>
                                         </li>
                                     </ul>
                                 </li>

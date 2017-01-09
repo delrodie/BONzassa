@@ -5,7 +5,8 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Presentation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Presentation controller.
@@ -60,7 +61,7 @@ class PresentationController extends Controller
     /**
      * Finds and displays a presentation entity.
      *
-     * @Route("/{id}", name="admin_presentation_show")
+     * @Route("/{slug}", name="admin_presentation_show")
      * @Method("GET")
      */
     public function showAction(Presentation $presentation)
@@ -133,4 +134,6 @@ class PresentationController extends Controller
             ->getForm()
         ;
     }
+
+
 }
