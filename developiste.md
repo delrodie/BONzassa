@@ -265,3 +265,6 @@ Ainsi nous avons comme MLD
 9°/ **Gestion de la rubrique Avantages**
     Creation de la classe Avantages
     ** - [*- php bin/console doctrine:generate:entity AppBundle:Avantage -*]
+
+    Generation CRUD des classes ImgAvantage et Avantage
+    ** - [*- php bin/console doctrine:generate:crud AppBundle:ImgAvantage/Avantage -**]

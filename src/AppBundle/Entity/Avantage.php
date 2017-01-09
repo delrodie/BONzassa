@@ -25,6 +25,13 @@ class Avantage
     /**
      * @var string
      *
+     * @ORM\Column(name="rubrique", type="string", length=75, unique=true)
+     */
+    private $rubrique;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;
@@ -375,5 +382,29 @@ class Avantage
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set rubrique
+     *
+     * @param string $rubrique
+     *
+     * @return Avantage
+     */
+    public function setRubrique($rubrique)
+    {
+        $this->rubrique = $rubrique;
+
+        return $this;
+    }
+
+    /**
+     * Get rubrique
+     *
+     * @return string
+     */
+    public function getRubrique()
+    {
+        return $this->rubrique;
     }
 }
