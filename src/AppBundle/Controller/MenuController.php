@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Presentation;
+use AppBundle\Entity\Avantage;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -29,4 +30,20 @@ class MenuController extends Controller
           'presentations' => $presentations,
       ));
   }
+
+  /**
+   * Menu de la rubrique presentation.
+   *
+   */
+  public function avantageAction()
+  {
+      $em = $this->getDoctrine()->getManager();
+
+      $avantages = $em->getRepository('AppBundle:Avantage')->findAll();
+
+      return $this->render('menu/avantage.html.twig', array(
+          'avantages' => $avantages,
+      ));
+  }
+
 }
