@@ -62,4 +62,19 @@ class MenuController extends Controller
       ));
   }
 
+  /**
+   * Menu de la rubrique contact.
+   *
+   */
+  public function contactAction()
+  {
+      $em = $this->getDoctrine()->getManager();
+
+      $contacts = $em->getRepository('AppBundle:Contact')->findAll();
+
+      return $this->render('menu/contact.html.twig', array(
+          'contacts' => $contacts,
+      ));
+  }
+
 }

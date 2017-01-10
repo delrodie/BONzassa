@@ -19,3 +19,8 @@ menu_communaute:
     path:     /menu/communaute
     defaults: { _controller: "AppBundle:Menu:communaute" }
     methods:  [GET, POST]
+
+menu_contact:
+    path:     /menu/contact
+    defaults: { _controller: "AppBundle:Menu:contact" }
+    methods:  [GET, POST]

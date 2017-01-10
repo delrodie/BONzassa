@@ -159,7 +159,7 @@ class ImgContact
         public function getUploadDir()
         {
             // On retourne le chemin relatif vers l'image pour un navigateur
-            return 'contcat';
+            return 'contact';
         }
 
         protected function getUploadRootDir()

@@ -279,3 +279,6 @@ Ainsi nous avons comme MLD
 11°/ **Gestion de la rubrique Contact**
      Creation des classes Contact et ImgContat
      ** - [*- php bin/console doctrine:generate:entity AppBundle:Contcat/ImgContact -*]
+
+     Generation CRUD des classes Contact et ImgContact
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Contcat/ImgContact -*]
