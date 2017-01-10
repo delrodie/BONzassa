@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Imgcommunautes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Url</th>
+                <th>Alt</th>
+                <th>Statut</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for imgCommunaute in imgCommunautes %}
+            <tr>
+                <td><a href="{{ path('admin_imgcommunaute_show', { 'id': imgCommunaute.id }) }}">{{ imgCommunaute.id }}</a></td>
+                <td>{{ imgCommunaute.url }}</td>
+                <td>{{ imgCommunaute.alt }}</td>
+                <td>{% if imgCommunaute.statut %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_imgcommunaute_show', { 'id': imgCommunaute.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_imgcommunaute_edit', { 'id': imgCommunaute.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_imgcommunaute_new') }}">Create a new imgCommunaute</a>
+        </li>
+    </ul>
+{% endblock %}
