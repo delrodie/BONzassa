@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Imgcommunaute</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ imgCommunaute.id }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ imgCommunaute.url }}</td>
+            </tr>
+            <tr>
+                <th>Alt</th>
+                <td>{{ imgCommunaute.alt }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{% if imgCommunaute.statut %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_imgcommunaute_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_imgcommunaute_edit', { 'id': imgCommunaute.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

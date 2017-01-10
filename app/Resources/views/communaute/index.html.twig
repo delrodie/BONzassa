@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Communautes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Rubrique</th>
+                <th>Titre</th>
+                <th>Slug</th>
+                <th>Resume</th>
+                <th>Contenu</th>
+                <th>Tags</th>
+                <th>Publiepar</th>
+                <th>Modifiepar</th>
+                <th>Publiele</th>
+                <th>Modifiele</th>
+                <th>Statut</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for communaute in communautes %}
+            <tr>
+                <td><a href="{{ path('admin_communaute_show', { 'id': communaute.id }) }}">{{ communaute.id }}</a></td>
+                <td>{{ communaute.rubrique }}</td>
+                <td>{{ communaute.titre }}</td>
+                <td>{{ communaute.slug }}</td>
+                <td>{{ communaute.resume }}</td>
+                <td>{{ communaute.contenu }}</td>
+                <td>{{ communaute.tags }}</td>
+                <td>{{ communaute.publiePar }}</td>
+                <td>{{ communaute.modifiePar }}</td>
+                <td>{{ communaute.publieLe }}</td>
+                <td>{{ communaute.modifieLe }}</td>
+                <td>{% if communaute.statut %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_communaute_show', { 'id': communaute.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_communaute_edit', { 'id': communaute.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_communaute_new') }}">Create a new communaute</a>
+        </li>
+    </ul>
+{% endblock %}

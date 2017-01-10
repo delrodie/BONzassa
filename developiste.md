@@ -267,4 +267,11 @@ Ainsi nous avons comme MLD
     ** - [*- php bin/console doctrine:generate:entity AppBundle:Avantage -*]
 
     Generation CRUD des classes ImgAvantage et Avantage
-    ** - [*- php bin/console doctrine:generate:crud AppBundle:ImgAvantage/Avantage -**]
+    ** - [*- php bin/console doctrine:generate:crud AppBundle:ImgAvantage/Avantage -*]
+
+10°/ **Gestion de la rubrique Communuaté**
+     Creation des classes Communaute et ImgCommunaute
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Communaute -*]
+
+     Generation CRUD des classes Communaute et ImgCommunaute
+     ** - [*- php bin/console doctrine:gnerate:crud AppBundle:Communaute/ImgCommunaute -*]

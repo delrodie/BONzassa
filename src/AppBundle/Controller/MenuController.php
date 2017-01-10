@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Presentation;
 use AppBundle\Entity\Avantage;
+use AppBundle\Entity\Communaute;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -43,6 +44,21 @@ class MenuController extends Controller
 
       return $this->render('menu/avantage.html.twig', array(
           'avantages' => $avantages,
+      ));
+  }
+
+  /**
+   * Menu de la rubrique communuate.
+   *
+   */
+  public function communauteAction()
+  {
+      $em = $this->getDoctrine()->getManager();
+
+      $communautes = $em->getRepository('AppBundle:Communaute')->findAll();
+
+      return $this->render('menu/communaute.html.twig', array(
+          'communautes' => $communautes,
       ));
   }
 

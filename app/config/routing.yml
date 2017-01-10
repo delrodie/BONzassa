@@ -14,3 +14,8 @@ menu_avantage:
     path:     /menu/avantage
     defaults: { _controller: "AppBundle:Menu:avantage" }
     methods:  [GET, POST]
+
+menu_communaute:
+    path:     /menu/communaute
+    defaults: { _controller: "AppBundle:Menu:communaute" }
+    methods:  [GET, POST]

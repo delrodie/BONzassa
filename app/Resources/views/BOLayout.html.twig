@@ -144,7 +144,7 @@
                                         <li class="dropdown more-dropdown-sub">
                                             <a href="javascript:;"> Communauté </a>
                                             <ul class="dropdown-menu">
-
+                                              {{ render(url('menu_communaute')) }}
                                             </ul>
                                         </li>
                                         <li class="dropdown more-dropdown-sub">
@@ -197,7 +197,7 @@
                                             <i class="fa fa-plus"></i> Avantages </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{ path('admin_communaute_new')}}">
                                             <i class="fa fa-plus"></i> Communauté </a>
                                         </li>
                                         <li>
