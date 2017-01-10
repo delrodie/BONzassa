@@ -416,28 +416,4 @@ class Evenement
     {
         return $this->modifieLe;
     }
-
-    /**
-     * Set lieu
-     *
-     * @param string $lieu
-     *
-     * @return Evenement
-     */
-    public function setLieu($lieu)
-    {
-        $this->lieu = $lieu;
-
-        return $this;
-    }
-
-    /**
-     * Get lieu
-     *
-     * @return string
-     */
-    public function getLieu()
-    {
-        return $this->lieu;
-    }
 }
