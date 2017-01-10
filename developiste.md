@@ -282,3 +282,7 @@ Ainsi nous avons comme MLD
 
      Generation CRUD des classes Contact et ImgContact
      ** - [*- php bin/console doctrine:generate:crud AppBundle:Contcat/ImgContact -*]
+
+12°/ **Gestion de la rubrique Publicite**
+     Creation des classes Publicite et ImgPublicite
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Publicite/ImgPublicite -*]
