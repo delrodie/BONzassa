@@ -6,12 +6,12 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Presentation
+ * Contact
  *
- * @ORM\Table(name="presentation")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\PresentationRepository")
+ * @ORM\Table(name="contact")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ContactRepository")
  */
-class Presentation
+class Contact
 {
     /**
      * @var int
@@ -25,7 +25,7 @@ class Presentation
     /**
      * @var string
      *
-     * @ORM\Column(name="rubrique", type="string", length=75, unique=true)
+     * @ORM\Column(name="rubrique", type="string", length=75)
      */
     private $rubrique;
 
@@ -37,8 +37,10 @@ class Presentation
     private $titre;
 
     /**
+     * @var string
+     *
      * @Gedmo\Slug(fields={"titre"})
-     * @ORM\Column(length=128, unique=true)
+     * @ORM\Column(name="slug", type="string", length=255)
      */
     private $slug;
 
@@ -67,7 +69,7 @@ class Presentation
      * @var string
      *
      * @Gedmo\Blameable(on="create")
-     * @ORM\Column(name="publie_par", type="string", length=255, nullable=true)
+     * @ORM\Column(name="publiePar", type="string", length=25, nullable=true)
      */
     private $publiePar;
 
@@ -75,7 +77,7 @@ class Presentation
      * @var string
      *
      * @Gedmo\Blameable(on="update")
-     * @ORM\Column(name="modifie_par", type="string", length=255)
+     * @ORM\Column(name="modifiePar", type="string", length=25, nullable=true)
      */
     private $modifiePar;
 
@@ -83,7 +85,7 @@ class Presentation
      * @var \DateTime
      *
      * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(name="publie_le", type="datetimetz", nullable=true)
+     * @ORM\Column(name="publieLe", type="datetimetz", nullable=true)
      */
     private $publieLe;
 
@@ -91,7 +93,7 @@ class Presentation
      * @var \DateTime
      *
      * @Gedmo\Timestampable(on="update")
-     * @ORM\Column(name="modifie_le", type="datetimetz", nullable=true)
+     * @ORM\Column(name="modifieLe", type="datetimetz", nullable=true)
      */
     private $modifieLe;
 
@@ -103,7 +105,7 @@ class Presentation
     private $statut;
 
     /**
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\ImgPresentation", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\ImgContact", cascade={"persist", "remove"})
      */
      private $image;
 
@@ -123,7 +125,7 @@ class Presentation
      *
      * @param string $rubrique
      *
-     * @return Presentation
+     * @return Contact
      */
     public function setRubrique($rubrique)
     {
@@ -147,7 +149,7 @@ class Presentation
      *
      * @param string $titre
      *
-     * @return Presentation
+     * @return Contact
      */
     public function setTitre($titre)
     {
@@ -167,11 +169,35 @@ class Presentation
     }
 
     /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Contact
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
      * Set resume
      *
      * @param string $resume
      *
-     * @return Presentation
+     * @return Contact
      */
     public function setResume($resume)
     {
@@ -195,7 +221,7 @@ class Presentation
      *
      * @param string $contenu
      *
-     * @return Presentation
+     * @return Contact
      */
     public function setContenu($contenu)
     {
@@ -219,7 +245,7 @@ class Presentation
      *
      * @param string $tags
      *
-     * @return Presentation
+     * @return Contact
      */
     public function setTags($tags)
     {
@@ -243,7 +269,7 @@ class Presentation
      *
      * @param string $publiePar
      *
-     * @return Presentation
+     * @return Contact
      */
     public function setPubliePar($publiePar)
     {
@@ -267,7 +293,7 @@ class Presentation
      *
      * @param string $modifiePar
      *
-     * @return Presentation
+     * @return Contact
      */
     public function setModifiePar($modifiePar)
     {
@@ -291,7 +317,7 @@ class Presentation
      *
      * @param \DateTime $publieLe
      *
-     * @return Presentation
+     * @return Contact
      */
     public function setPublieLe($publieLe)
     {
@@ -315,7 +341,7 @@ class Presentation
      *
      * @param \DateTime $modifieLe
      *
-     * @return Presentation
+     * @return Contact
      */
     public function setModifieLe($modifieLe)
     {
@@ -339,7 +365,7 @@ class Presentation
      *
      * @param boolean $statut
      *
-     * @return Presentation
+     * @return Contact
      */
     public function setStatut($statut)
     {
@@ -359,26 +385,26 @@ class Presentation
     }
 
     /**
-     * Set slug
+     * Set image
      *
-     * @param string $slug
+     * @param \AppBundle\Entity\ImgContact $image
      *
-     * @return Presentation
+     * @return Contact
      */
-    public function setSlug($slug)
+    public function setImage(\AppBundle\Entity\ImgContact $image = null)
     {
-        $this->slug = $slug;
+        $this->image = $image;
 
         return $this;
     }
 
     /**
-     * Get slug
+     * Get image
      *
-     * @return string
+     * @return \AppBundle\Entity\ImgContact
      */
-    public function getSlug()
+    public function getImage()
     {
-        return $this->slug;
+        return $this->image;
     }
 }

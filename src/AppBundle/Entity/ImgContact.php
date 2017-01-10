@@ -9,11 +9,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Image
  *
- * @ORM\Table(name="imgcommunaute")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\imgcommunuateRepository")
+ * @ORM\Table(name="imgcontact")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\imgcontactRepository")
  * @ORM\HasLifecycleCallbacks
  */
-class ImgCommunaute
+class ImgContact
 {
     /**
      * @var int
@@ -159,7 +159,7 @@ class ImgCommunaute
         public function getUploadDir()
         {
             // On retourne le chemin relatif vers l'image pour un navigateur
-            return 'communaute';
+            return 'contcat';
         }
 
         protected function getUploadRootDir()
