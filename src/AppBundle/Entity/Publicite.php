@@ -101,6 +101,13 @@ class Publicite
      */
      private $image;
 
+     /**
+      * @var bool
+      *
+      * @ORM\Column(name="statut", type="boolean", nullable=true)
+      */
+     private $statut;
+
 
     /**
      * Get id
@@ -374,5 +381,29 @@ class Publicite
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set statut
+     *
+     * @param boolean $statut
+     *
+     * @return Publicite
+     */
+    public function setStatut($statut)
+    {
+        $this->statut = $statut;
+
+        return $this;
+    }
+
+    /**
+     * Get statut
+     *
+     * @return boolean
+     */
+    public function getStatut()
+    {
+        return $this->statut;
     }
 }

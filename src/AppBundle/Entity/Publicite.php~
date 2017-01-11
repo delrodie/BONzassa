@@ -101,6 +101,13 @@ class Publicite
      */
      private $image;
 
+     /**
+      * @var bool
+      *
+      * @ORM\Column(name="statut", type="boolean", nullable=true)
+      */
+     private $statut;
+
 
     /**
      * Get id
@@ -206,5 +213,173 @@ class Publicite
     public function getContact()
     {
         return $this->contact;
+    }
+
+    /**
+     * Set datedeb
+     *
+     * @param string $datedeb
+     *
+     * @return Publicite
+     */
+    public function setDatedeb($datedeb)
+    {
+        $this->datedeb = $datedeb;
+
+        return $this;
+    }
+
+    /**
+     * Get datedeb
+     *
+     * @return string
+     */
+    public function getDatedeb()
+    {
+        return $this->datedeb;
+    }
+
+    /**
+     * Set datefin
+     *
+     * @param string $datefin
+     *
+     * @return Publicite
+     */
+    public function setDatefin($datefin)
+    {
+        $this->datefin = $datefin;
+
+        return $this;
+    }
+
+    /**
+     * Get datefin
+     *
+     * @return string
+     */
+    public function getDatefin()
+    {
+        return $this->datefin;
+    }
+
+    /**
+     * Set publiePar
+     *
+     * @param string $publiePar
+     *
+     * @return Publicite
+     */
+    public function setPubliePar($publiePar)
+    {
+        $this->publiePar = $publiePar;
+
+        return $this;
+    }
+
+    /**
+     * Get publiePar
+     *
+     * @return string
+     */
+    public function getPubliePar()
+    {
+        return $this->publiePar;
+    }
+
+    /**
+     * Set modifiePar
+     *
+     * @param string $modifiePar
+     *
+     * @return Publicite
+     */
+    public function setModifiePar($modifiePar)
+    {
+        $this->modifiePar = $modifiePar;
+
+        return $this;
+    }
+
+    /**
+     * Get modifiePar
+     *
+     * @return string
+     */
+    public function getModifiePar()
+    {
+        return $this->modifiePar;
+    }
+
+    /**
+     * Set publieLe
+     *
+     * @param \DateTime $publieLe
+     *
+     * @return Publicite
+     */
+    public function setPublieLe($publieLe)
+    {
+        $this->publieLe = $publieLe;
+
+        return $this;
+    }
+
+    /**
+     * Get publieLe
+     *
+     * @return \DateTime
+     */
+    public function getPublieLe()
+    {
+        return $this->publieLe;
+    }
+
+    /**
+     * Set modifieLe
+     *
+     * @param \DateTime $modifieLe
+     *
+     * @return Publicite
+     */
+    public function setModifieLe($modifieLe)
+    {
+        $this->modifieLe = $modifieLe;
+
+        return $this;
+    }
+
+    /**
+     * Get modifieLe
+     *
+     * @return \DateTime
+     */
+    public function getModifieLe()
+    {
+        return $this->modifieLe;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \AppBundle\Entity\ImgPublicite $image
+     *
+     * @return Publicite
+     */
+    public function setImage(\AppBundle\Entity\ImgPublicite $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \AppBundle\Entity\ImgPublicite
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }
