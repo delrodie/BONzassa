@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="avantage")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\AvantageRepository")
+ * @Gedmo\Loggable
  */
 class Avantage
 {
@@ -25,6 +26,7 @@ class Avantage
     /**
      * @var string
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="rubrique", type="string", length=75, unique=true)
      */
     private $rubrique;
@@ -32,6 +34,7 @@ class Avantage
     /**
      * @var string
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;

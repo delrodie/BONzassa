@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="evenement")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\EvenementRepository")
+ * @Gedmo\Loggable
  */
 class Evenement
 {
@@ -25,6 +26,7 @@ class Evenement
     /**
      * @var string
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="annonce", type="string", length=255)
      */
     private $annonce;
@@ -32,6 +34,7 @@ class Evenement
     /**
      * @var string
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="lieu", type="string", length=255)
      */
     private $lieu;
@@ -54,6 +57,7 @@ class Evenement
     /**
      * @var string
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="datedeb", type="string", length=10, nullable=true)
      */
     private $datedeb;
@@ -61,6 +65,7 @@ class Evenement
     /**
      * @var string
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="datefin", type="string", length=10, nullable=true)
      */
     private $datefin;

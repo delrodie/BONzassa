@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="presentation")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PresentationRepository")
+ * @Gedmo\Loggable
  */
 class Presentation
 {
@@ -25,6 +26,7 @@ class Presentation
     /**
      * @var string
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="rubrique", type="string", length=75, unique=true)
      */
     private $rubrique;
@@ -32,6 +34,7 @@ class Presentation
     /**
      * @var string
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;
@@ -98,6 +101,7 @@ class Presentation
     /**
      * @var bool
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="statut", type="boolean", nullable=true)
      */
     private $statut;

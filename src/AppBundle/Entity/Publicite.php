@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="publicite")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PubliciteRepository")
+ * @Gedmo\Loggable
  */
 class Publicite
 {
@@ -25,6 +26,7 @@ class Publicite
     /**
      * @var string
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="libelle", type="string", length=255)
      */
     private $libelle;
@@ -104,6 +106,7 @@ class Publicite
      /**
       * @var bool
       *
+      * @Gedmo\Versioned
       * @ORM\Column(name="statut", type="boolean", nullable=true)
       */
      private $statut;

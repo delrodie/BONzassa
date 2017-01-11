@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="contact")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ContactRepository")
+ * @Gedmo\Loggable
  */
 class Contact
 {
@@ -25,6 +26,7 @@ class Contact
     /**
      * @var string
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="rubrique", type="string", length=75)
      */
     private $rubrique;
@@ -32,6 +34,7 @@ class Contact
     /**
      * @var string
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;
@@ -100,6 +103,7 @@ class Contact
     /**
      * @var bool
      *
+     * @Gedmo\Versioned
      * @ORM\Column(name="statut", type="boolean", nullable=true)
      */
     private $statut;
