@@ -126,7 +126,7 @@
                                         <i class="icon-folder"></i> Rubriques </a>
                                     <ul class="dropdown-menu dropdown-menu-fw">
                                         <li class="">
-                                            <a href="#">
+                                            <a href="{{ path('admin_slider_index') }}">
                                             <i class="fa fa-home" aria-hidden="true"></i> Accueil </a>
                                         </li>
                                         <li class="dropdown more-dropdown-sub">
@@ -198,11 +198,8 @@
                                       <li class="dropdown more-dropdown-sub">
                                           <a href="javascript:;"> <i class="fa fa-plus" aria-hidden="true"></i> Accueil </a>
                                           <ul class="dropdown-menu">
-                                            <li><a href="{{ path('admin_accueil_new')}}">Introduction</a></li>
-                                            <li><a href="#">Slider 1</a></li>
-                                            <li><a href="#">Slider 2</a></li>
-                                            <li><a href="#">Slider 3</a></li>
-                                            <li><a href="#">Slider 4</a></li>
+                                            <li><a href="{{ path('admin_accueil_new') }}">Introduction</a></li>
+                                            <li><a href="{{ path('admin_slider_new') }}">Slider</a></li>
                                           </ul>
                                       </li>
                                         <li class="">
