@@ -293,3 +293,11 @@ Ainsi nous avons comme MLD
 
      Generation CRUD de la classe Accueil
      ** - [*- php bin/console doctrine:generate:crud AppBundle:Accueil -*]
+
+     Creation des classes Slider et ImgSlider
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Slider/ImgSlider -*]
+
+     Generation CRUD des entités Slider et ImgSlider
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Slider/ImgSlider -*]
+
+     Mise en pages des classes Slider et ImgSlider 

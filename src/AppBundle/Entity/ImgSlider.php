@@ -9,11 +9,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Image
  *
- * @ORM\Table(name="imgpublicite")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\imgpubliciteRepository")
+ * @ORM\Table(name="imgslider")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\imgsliderRepository")
  * @ORM\HasLifecycleCallbacks
  */
-class ImgPublicite
+class ImgSlider
 {
     /**
      * @var int
@@ -159,7 +159,7 @@ class ImgPublicite
         public function getUploadDir()
         {
             // On retourne le chemin relatif vers l'image pour un navigateur
-            return 'publicite';
+            return 'slider';
         }
 
         protected function getUploadRootDir()

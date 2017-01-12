@@ -6,12 +6,13 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Publicite
+ * Slider
  *
- * @ORM\Table(name="publicite")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\PubliciteRepository")
+ * @ORM\Table(name="slider")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\SliderRepository")
+ * @Gedmo\Loggable
  */
-class Publicite
+class Slider
 {
     /**
      * @var int
@@ -25,44 +26,17 @@ class Publicite
     /**
      * @var string
      *
-     * @ORM\Column(name="libelle", type="string", length=255)
+     * @Gedmo\Versioned
+     * @ORM\Column(name="titre", type="string", length=75, nullable=true)
      */
-    private $libelle;
+    private $titre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="activite", type="text", nullable=true)
+     * @ORM\Column(name="description", type="string", length=255, nullable=true)
      */
-    private $activite;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="situation", type="string", length=255, nullable=true)
-     */
-    private $situation;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="contact", type="string", length=25, nullable=true)
-     */
-    private $contact;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="datedeb", type="string", length=10, nullable=true)
-     */
-    private $datedeb;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="datefin", type="string", length=10, nullable=true)
-     */
-    private $datefin;
+    private $description;
 
     /**
      * @var string
@@ -97,13 +71,14 @@ class Publicite
     private $modifieLe;
 
     /**
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\ImgPublicite", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\ImgSlider", cascade={"persist", "remove"})
      */
      private $image;
 
      /**
       * @var bool
       *
+      * @Gedmo\Versioned
       * @ORM\Column(name="statut", type="boolean", nullable=true)
       */
      private $statut;
@@ -120,147 +95,51 @@ class Publicite
     }
 
     /**
-     * Set libelle
+     * Set titre
      *
-     * @param string $libelle
+     * @param string $titre
      *
-     * @return Publicite
+     * @return Slider
      */
-    public function setLibelle($libelle)
+    public function setTitre($titre)
     {
-        $this->libelle = $libelle;
+        $this->titre = $titre;
 
         return $this;
     }
 
     /**
-     * Get libelle
+     * Get titre
      *
      * @return string
      */
-    public function getLibelle()
+    public function getTitre()
     {
-        return $this->libelle;
+        return $this->titre;
     }
 
     /**
-     * Set activite
+     * Set description
      *
-     * @param string $activite
+     * @param string $description
      *
-     * @return Publicite
+     * @return Slider
      */
-    public function setActivite($activite)
+    public function setDescription($description)
     {
-        $this->activite = $activite;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get activite
+     * Get description
      *
      * @return string
      */
-    public function getActivite()
+    public function getDescription()
     {
-        return $this->activite;
-    }
-
-    /**
-     * Set situation
-     *
-     * @param string $situation
-     *
-     * @return Publicite
-     */
-    public function setSituation($situation)
-    {
-        $this->situation = $situation;
-
-        return $this;
-    }
-
-    /**
-     * Get situation
-     *
-     * @return string
-     */
-    public function getSituation()
-    {
-        return $this->situation;
-    }
-
-    /**
-     * Set contact
-     *
-     * @param string $contact
-     *
-     * @return Publicite
-     */
-    public function setContact($contact)
-    {
-        $this->contact = $contact;
-
-        return $this;
-    }
-
-    /**
-     * Get contact
-     *
-     * @return string
-     */
-    public function getContact()
-    {
-        return $this->contact;
-    }
-
-    /**
-     * Set datedeb
-     *
-     * @param string $datedeb
-     *
-     * @return Publicite
-     */
-    public function setDatedeb($datedeb)
-    {
-        $this->datedeb = $datedeb;
-
-        return $this;
-    }
-
-    /**
-     * Get datedeb
-     *
-     * @return string
-     */
-    public function getDatedeb()
-    {
-        return $this->datedeb;
-    }
-
-    /**
-     * Set datefin
-     *
-     * @param string $datefin
-     *
-     * @return Publicite
-     */
-    public function setDatefin($datefin)
-    {
-        $this->datefin = $datefin;
-
-        return $this;
-    }
-
-    /**
-     * Get datefin
-     *
-     * @return string
-     */
-    public function getDatefin()
-    {
-        return $this->datefin;
+        return $this->description;
     }
 
     /**
@@ -268,7 +147,7 @@ class Publicite
      *
      * @param string $publiePar
      *
-     * @return Publicite
+     * @return Slider
      */
     public function setPubliePar($publiePar)
     {
@@ -292,7 +171,7 @@ class Publicite
      *
      * @param string $modifiePar
      *
-     * @return Publicite
+     * @return Slider
      */
     public function setModifiePar($modifiePar)
     {
@@ -316,7 +195,7 @@ class Publicite
      *
      * @param \DateTime $publieLe
      *
-     * @return Publicite
+     * @return Slider
      */
     public function setPublieLe($publieLe)
     {
@@ -340,7 +219,7 @@ class Publicite
      *
      * @param \DateTime $modifieLe
      *
-     * @return Publicite
+     * @return Slider
      */
     public function setModifieLe($modifieLe)
     {
@@ -360,13 +239,37 @@ class Publicite
     }
 
     /**
+     * Set statut
+     *
+     * @param boolean $statut
+     *
+     * @return Slider
+     */
+    public function setStatut($statut)
+    {
+        $this->statut = $statut;
+
+        return $this;
+    }
+
+    /**
+     * Get statut
+     *
+     * @return boolean
+     */
+    public function getStatut()
+    {
+        return $this->statut;
+    }
+
+    /**
      * Set image
      *
-     * @param \AppBundle\Entity\ImgPublicite $image
+     * @param \AppBundle\Entity\ImgSlider $image
      *
-     * @return Publicite
+     * @return Slider
      */
-    public function setImage(\AppBundle\Entity\ImgPublicite $image = null)
+    public function setImage(\AppBundle\Entity\ImgSlider $image = null)
     {
         $this->image = $image;
 
@@ -376,7 +279,7 @@ class Publicite
     /**
      * Get image
      *
-     * @return \AppBundle\Entity\ImgPublicite
+     * @return \AppBundle\Entity\ImgSlider
      */
     public function getImage()
     {
