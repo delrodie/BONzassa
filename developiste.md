@@ -289,4 +289,7 @@ Ainsi nous avons comme MLD
 
 12°/ **Gestion de la rubrique Accueil**
      Creation de la classe Accueil
-     ** - [*- php bin/console doctrine:generate:entity AppBundle:Accueil -*] 
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Accueil -*]
+
+     Generation CRUD de la classe Accueil
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Accueil -*]

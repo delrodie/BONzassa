@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Accueils list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Slug</th>
+                <th>Contenu</th>
+                <th>Publiepar</th>
+                <th>Modifiepar</th>
+                <th>Publiele</th>
+                <th>Modifiele</th>
+                <th>Statut</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for accueil in accueils %}
+            <tr>
+                <td><a href="{{ path('admin_accueil_show', { 'id': accueil.id }) }}">{{ accueil.id }}</a></td>
+                <td>{{ accueil.titre }}</td>
+                <td>{{ accueil.slug }}</td>
+                <td>{{ accueil.contenu }}</td>
+                <td>{{ accueil.publiePar }}</td>
+                <td>{{ accueil.modifiePar }}</td>
+                <td>{{ accueil.publieLe }}</td>
+                <td>{{ accueil.modifieLe }}</td>
+                <td>{% if accueil.statut %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_accueil_show', { 'id': accueil.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_accueil_edit', { 'id': accueil.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_accueil_new') }}">Create a new accueil</a>
+        </li>
+    </ul>
+{% endblock %}
