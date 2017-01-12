@@ -5,7 +5,10 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Publicite;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+
+use Symfony\Component\Security\Core\SecurityContext;
 
 /**
  * Publicite controller.
@@ -23,6 +26,14 @@ class PubliciteController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+
+        $utilisateur= $this->get('security.token_storage')->getToken()->getUser();
+
+        // $logger = $this->get('logger');
+        // $logger->info('$utilisateur consulte la liste des publicité');
+
+        //var_dump($logger);
+        // die($utilisateur);
 
         $publicites = $em->getRepository('AppBundle:Publicite')->findAll();
 
