@@ -126,7 +126,7 @@
                                         <i class="icon-folder"></i> Rubriques </a>
                                     <ul class="dropdown-menu dropdown-menu-fw">
                                         <li class="">
-                                            <a href="#">
+                                            <a href="{{ path('admin_slider_index') }}">
                                             <i class="fa fa-home" aria-hidden="true"></i> Accueil </a>
                                         </li>
                                         <li class="dropdown more-dropdown-sub">
@@ -154,10 +154,10 @@
                                             </ul>
                                         </li>
                                         <li class="">
-                                            <a href="{{ path('admin_evenement_new') }}">
+                                            <a href="{{ path('admin_evenement_index') }}">
                                             <i class="icon-calendar" aria-hidden="true"></i> Evenements </a>
                                         </li><li class="">
-                                            <a href="{{ path('admin_publicite_new') }}">
+                                            <a href="{{ path('admin_publicite_index') }}">
                                             <i class="icon-picture" aria-hidden="true"></i> Publicité </a>
                                         </li>
                                     </ul>
@@ -195,6 +195,13 @@
                                     <a href="javascript:;" class="text-uppercase">
                                         <i class="fa fa-cogs"></i> Paramètres </a>
                                     <ul class="dropdown-menu dropdown-menu-fw">
+                                      <li class="dropdown more-dropdown-sub">
+                                          <a href="javascript:;"> <i class="fa fa-plus" aria-hidden="true"></i> Accueil </a>
+                                          <ul class="dropdown-menu">
+                                            <li><a href="{{ path('admin_accueil_new') }}">Introduction</a></li>
+                                            <li><a href="{{ path('admin_slider_new') }}">Slider</a></li>
+                                          </ul>
+                                      </li>
                                         <li class="">
                                             <a href="{{ path('admin_presentation_new')}}">
                                             <i class="fa fa-plus" aria-hidden="true"></i> Presentation </a>
@@ -206,6 +213,14 @@
                                         <li>
                                             <a href="{{ path('admin_communaute_new')}}">
                                             <i class="fa fa-plus"></i> Communauté </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('admin_evenement_new')}}">
+                                            <i class="fa fa-plus"></i> Evenement </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('admin_publicite_new')}}">
+                                            <i class="fa fa-plus"></i> Publicité </a>
                                         </li>
                                         <li>
                                             <a href="{{ path('admin_contact_new')}}">

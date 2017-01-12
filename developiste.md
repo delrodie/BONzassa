@@ -286,3 +286,18 @@ Ainsi nous avons comme MLD
 12°/ **Gestion de la rubrique Publicite**
      Creation des classes Publicite et ImgPublicite
      ** - [*- php bin/console doctrine:generate:entity AppBundle:Publicite/ImgPublicite -*]
+
+12°/ **Gestion de la rubrique Accueil**
+     Creation de la classe Accueil
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Accueil -*]
+
+     Generation CRUD de la classe Accueil
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Accueil -*]
+
+     Creation des classes Slider et ImgSlider
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Slider/ImgSlider -*]
+
+     Generation CRUD des entités Slider et ImgSlider
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Slider/ImgSlider -*]
+
+     Mise en pages des classes Slider et ImgSlider 

@@ -2,7 +2,7 @@
 
 {% block title %}
   {{ parent() }}
-  Enregistrement d'une publicité
+  Enregistrement de l'introduction
 {% endblock %}
 
 {% block stylesheets %}
@@ -16,15 +16,15 @@
 {% block body %}
 <!-- BEGIN BREADCRUMBS -->
 <div class="breadcrumbs">
-  <h1>Publicité</h1>
+  <h1>Introduction</h1>
   <ol class="breadcrumb">
     <li>
       <a href="{{ path('homepage')}}">Accueil</a>
     </li>
     <li>
-      <a href="{{ path('admin_publicite_index')}}">Publicité</a>
+      <a href="#">introduction</a>
     </li>
-    <li class="active">Enregistrement</li>
+    <li class="active">Modification</li>
   </ol>
   <!-- Sidebar Toggle Button -->
   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".page-sidebar">
@@ -54,7 +54,7 @@
       <div class="portlet box blue">
         <div class="portlet-title">
           <div class="caption">
-            <i class="fa fa-floppy-o fa-2x"></i> Formulaire de modification
+            <i class="fa fa-floppy-o fa-2x"></i> Formulaire de Modification
           </div>
           <div class="tools"> </div>
         </div>
@@ -63,82 +63,30 @@
           <!--<form class="form-horizontal" method="post" >-->
             {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }}
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="control-label col-md-4">Entreprise
-                    <span class="required"> * </span>
-                  </label>
-                  <div class="col-md-8">
-                    {{ form_widget(edit_form.libelle) }}
-                    {{ form_errors(edit_form.libelle) }}
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-4">Activité
-                    <span class="required"> * </span>
-                  </label>
-                  <div class="col-md-8">
-                    {{ form_widget(edit_form.activite) }}
-                    {{ form_errors(edit_form.activite) }}
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-4">Situation géographique
-                    <span class="required"> * </span>
-                  </label>
-                  <div class="col-md-8">
-                    {{ form_widget(edit_form.situation) }}
-                    {{ form_errors(edit_form.situation) }}
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-4">Contact
-                    <span class="required"> * </span>
-                  </label>
-                  <div class="col-md-8">
-                    {{ form_widget(edit_form.contact) }}
-                    {{ form_errors(edit_form.contact) }}
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-4">Date debut
-                    <span class="required"> * </span>
-                  </label>
-                  <div class="col-md-8">
-                    {{ form_widget(edit_form.datedeb) }}
-                    {{ form_errors(edit_form.datedeb) }}
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-4">Date fin
-                    <span class="required"> * </span>
-                  </label>
-                  <div class="col-md-8">
-                    {{ form_widget(edit_form.datefin) }}
-                    {{ form_errors(edit_form.datefin) }}
-                  </div>
+              <div class="form-group">
+                <label class="control-label col-md-2">Titre
+                  <span class="required"> * </span>
+                </label>
+                <div class="col-md-8">
+                  {{ form_widget(edit_form.titre) }}
+                  {{ form_errors(edit_form.titre) }}
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="fileinput fileinput-new" data-provides="fileinput">
-                  <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 200px;"> </div>
-                  <div>
-                    <span class="btn red btn-outline btn-file">
-                      <span class="fileinput-new"> {{ form_widget(edit_form.image) }} </span>
-                      <span class="fileinput-exists"> Changer </span>
-                                <!--<input type="file" name="..."> -->
-                    </span>
-                    <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Supprimer </a>
-                  </div>
+              <div class="form-group">
+                <label class="control-label col-md-2">Contenu
+                  <span class="required"> * </span>
+                </label>
+                <div class="col-md-8">
+                  {{ form_widget(edit_form.contenu) }}
+                  {{ form_errors(edit_form.contenu) }}
                 </div>
               </div>
             </div>
-
             <div class="form-group">
               <label class="control-label col-md-3"></label>
               <div class="mt-checkbox-list col-md-6">
                 <label class="mt-checkbox mt-checkbox-outline">
-                  {{ form_widget(edit_form.statut) }} Activez cet evenement <span></span>
+                  {{ form_widget(edit_form.statut) }} Activez cette présentation <span></span>
                 </label>
               </div>
             </div>
