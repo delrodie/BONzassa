@@ -1,0 +1,14 @@
+<ul class="slides">
+  {% for slider in sliders %}
+  <li>
+    {% if slider.image %}
+      <img src="{{ asset('ressources/images/slider/' ~ slider.image.id ~ '.' ~ slider.image.url )}}" height="850px" alt="{{ slider.titre }}">
+    {% endif %}
+     <!-- random image -->
+    <div class="caption center-align">
+      <h3>{{ slider.titre|upper }}</h3>
+      <h5 class="light grey-text text-lighten-3">{{ slider.description }}</h5>
+    </div>
+  </li>
+  {% endfor %}
+</ul>

@@ -35,24 +35,16 @@
   <div class="navbar-fixed">
       <!-- SousMenu -->
       <ul id="presentation" class="dropdown-content">
-        <li><a href="presentation.php">Qui sommes-nous?</a></li>
-        <li><a href="#!">Equipe</a></li>
-        <!--<li class="divider"></li>
-        <li><a href="#!">Organigramme</a></li>-->
+        {{ render(url('fr_accueil_menu_presentation')) }}
       </ul>
       <ul id="avantage" class="dropdown-content">
-        <li><a href="marche.php">Marché</a></li>
-        <li><a href="financement.php">Financement</a></li>
-        <li><a href="soutien.php">Soutien</a></li>
+        {{ render(url('fr_accueil_menu_avantage')) }}
       </ul>
       <ul id="communaute" class="dropdown-content">
-        <li><a href="#!">Forum</a></li>
-        <li><a href="#!">Annuaire</a></li>
+        {{ render(url('fr_accueil_menu_communaute')) }}
       </ul>
       <ul id="contact" class="dropdown-content">
-        <li><a href="#!">Contacter l'équipe</a></li>
-        <li><a href="publicite.php">Faire une publicité</a></li>
-        <li><a href="#!">Demande de partenariat</a></li>
+        {{ render(url('fr_accueil_menu_contact')) }}
       </ul>
       <!-- \SousMenu -->
       <nav>
@@ -60,7 +52,7 @@
         <a href="#!" class="brand-logo">&nbsp; &nbsp;<img src="ressources/images/logonzassa.png" alt="" width="200px"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="accueil.php">Accueil</a></li>
+          <li><a href="#">Accueil</a></li>
           <li><a class="dropdown-button" href="#!" data-activates="presentation">Présentation<i class="material-icons right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-button" href="#!" data-activates="avantage">Avantages<i class="material-icons right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-button" href="#!" data-activates="communaute">Communautés<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -83,36 +75,7 @@
 
   <!-- Caroussel -->
   <div class="slider rnzassa-slider">
-    <ul class="slides">
-      <li>
-        <img src="ressources/images/01.jpg" height="850px"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>ELEVAGE</h3>
-          <!--<h5 class="light pink-text text-darken-2">Here's our small slogan.</h5>-->
-        </div>
-      </li>
-      <li>
-        <img src="ressources/images/02.jpg"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>DE LA RESTAURATION A L'ARTISANAT</h3>
-          <!--<h5 class="light black-text">Le reseau Nzassa regroupe aussi bien les jeunes entrepreneurs de la restauration que de l'artisanat en passant par l'informatique, le thimo et autres</h5>-->
-        </div>
-      </li>
-      <li>
-        <img src="ressources/images/03.jpg"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>INSATALLATION</h3>
-          <!--<h5 class="light grey-text text-lighten-3">Que ce soient les prestataires de services que le commerce les jeunes beneficiaires sont installés à leur propre compte</h5>-->
-        </div>
-      </li>
-      <li>
-        <img src="ressources/images/04.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>CONSEIL D'ADMINISTRATION</h3>
-          <h5 class="light grey-text text-lighten-3">Les membres du premier conseil d'Administration</h5>
-        </div>
-      </li>
-    </ul>
+    {{ render(url('fr_accueil_slider')) }}
   </div>
   <!-- \Caroussel -->
 
@@ -122,18 +85,7 @@
         <div class="col s12 m10 offset-m1">
           <div class="row">
             <div class="col m7 col-gauche">
-              <h5>Réseau Nzassa</h5>
-              <div>
-                <p>
-                  C’est un réseau qui rassemble les jeunes entrepreneurs de différents secteurs d’activités (commerce, élevage, services…) qui s’engagent ensemble à réussir leur projet.
-                </p>
-                <p>
-                  Au-delà de l’octroi de crédit, le réseau offre une plateforme d’échange et de networking qui facilite les interactions et la collaboration entre les membres du réseau.
-                </p>
-                <p>
-                  De plus, la mise place d’un partenariat avec le cabinet d’experts composés des agents de suivi et d’encadrement ASE permet un accès continu à la formation et au coaching individuel.
-                </p>
-              </div>
+              {{ render(url('fr_accueil_presentation')) }}
               <div class="row col-gauche">
                 <div class="col s4">
                   <a href="marche.php"><img src="ressources/images/accueil/marche.png" alt="" class="img-responsive"></a>
