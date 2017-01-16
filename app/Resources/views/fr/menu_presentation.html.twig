@@ -1,0 +1,3 @@
+{% for presentation in presentations %}
+  <a class="item" href="{{ path('fr_presentation', { 'slug': presentation.slug }) }}">{{ presentation.rubrique }}</a>
+{% endfor %}

@@ -1,0 +1,10 @@
+{% for evenement in evenements %}
+<div class="actualite">
+  <a href="#">
+    {{ evenement.annonce }}
+  </a>
+  <blockquote class="blockquote blockquote-reverse">
+    <footer>{{ evenement.lieu }} <cite title="{{ evenement.description }}">{{ evenement.datedeb}}</cite></footer>
+  </blockquote>
+</div>
+{% endfor %}

@@ -29,3 +29,8 @@ fr_accueil_slider:
     path:     /slider
     defaults: { _controller: "AppBundle:Default:slider" }
     methods:  [GET, POST]
+
+fr_presentation:
+    path:     /presentation/{slug}
+    defaults: { _controller: "AppBundle:Default:presentation" }
+    methods:  [GET, POST]

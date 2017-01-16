@@ -1,0 +1,8 @@
+{% for publicite in publicites %}
+<div class="item">
+  <img src="{{ asset('ressources/images/publicite/' ~ publicite.image.id ~ '.' ~ publicite.image.url )}}" alt="{{ publicite.libelle }}" class="img-responsive">
+  <div class="carousel-caption">
+    {{ publicite.libelle }}
+  </div>
+</div>
+{% endfor %}
