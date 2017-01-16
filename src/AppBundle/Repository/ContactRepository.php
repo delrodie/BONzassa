@@ -10,4 +10,31 @@ namespace AppBundle\Repository;
  */
 class ContactRepository extends \Doctrine\ORM\EntityRepository
 {
+  /**
+  * Requête de recherche du menu de la rubrique contact
+  *
+  * Author: Delrodie AMOIKON
+  * Date: 16/01/2017
+  * Since: v1.0
+  */
+  public function getMenu()
+  {
+      $em = $this->getEntityManager();
+      $qb = $em->createQuery('
+          SELECT a
+          FROM AppBundle:Contact a
+          WHERE a.statut = :stat
+      ')
+        ->setParameter('stat', 1)
+      ;
+      try {
+          $result = $qb->getResult();
+
+          return $result;
+
+      } catch (NoResultException $e) {
+          return $e;
+      }
+
+  }
 }

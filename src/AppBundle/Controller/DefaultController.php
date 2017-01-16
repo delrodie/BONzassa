@@ -112,7 +112,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $presentations = $em->getRepository('AppBundle:Presentation')->findAll();
+        $presentations = $em->getRepository('AppBundle:Presentation')->getMenu();
 
         return $this->render('fr/menu_presentation.html.twig', array(
             'presentations' => $presentations,
@@ -126,7 +126,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $avantages = $em->getRepository('AppBundle:Avantage')->findAll();
+        $avantages = $em->getRepository('AppBundle:Avantage')->getMenu();
 
         return $this->render('fr/menu_avantage.html.twig', array(
             'avantages' => $avantages,
@@ -140,7 +140,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $communautes = $em->getRepository('AppBundle:Communaute')->findAll();
+        $communautes = $em->getRepository('AppBundle:Communaute')->getMenu();
 
         return $this->render('fr/menu_communaute.html.twig', array(
             'communautes' => $communautes,
@@ -154,7 +154,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $contacts = $em->getRepository('AppBundle:Contact')->findAll();
+        $contacts = $em->getRepository('AppBundle:Contact')->getMenu();
 
         return $this->render('fr/menu_contact.html.twig', array(
             'contacts' => $contacts,
