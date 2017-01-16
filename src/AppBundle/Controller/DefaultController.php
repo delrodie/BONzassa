@@ -210,4 +210,22 @@ class DefaultController extends Controller
             'presentations' => $presentations,
         ));
     }
+
+    /**
+     * Finds and displays a presentation entity.
+     *
+     */
+    public function avantageAction($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        //$articles = $em->getRepository('AppBundle:Article')->findAll();
+        //$cle = 'Présentation';
+        $avantages = $em->getRepository('AppBundle:Avantage')->getArticle($slug);
+        //var_dump($article);
+        //die();
+        return $this->render('fr/avantage.html.twig', array(
+            'avantages' => $avantages,
+        ));
+    }
 }

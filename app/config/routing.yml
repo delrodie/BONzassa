@@ -34,3 +34,8 @@ fr_presentation:
     path:     /presentation/{slug}
     defaults: { _controller: "AppBundle:Default:presentation" }
     methods:  [GET, POST]
+
+fr_avantage:
+    path:     /avantage/{slug}
+    defaults: { _controller: "AppBundle:Default:avantage" }
+    methods:  [GET, POST]
