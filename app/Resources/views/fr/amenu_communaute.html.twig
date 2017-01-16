@@ -1,3 +1,3 @@
 {% for communaute in communautes %}
-<li><a href="">{{ communaute.rubrique }}</a></li>
+<li><a href="{{ path('fr_communaute', { 'slug': communaute.slug }) }}">{{ communaute.rubrique }}</a></li>
 {% endfor %}

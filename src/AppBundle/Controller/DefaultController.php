@@ -228,4 +228,22 @@ class DefaultController extends Controller
             'avantages' => $avantages,
         ));
     }
+
+    /**
+     * Finds and displays a Communaute entity.
+     *
+     */
+    public function communauteAction($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        //$articles = $em->getRepository('AppBundle:Article')->findAll();
+        //$cle = 'Présentation';
+        $communautes = $em->getRepository('AppBundle:Communaute')->getArticle($slug);
+        //var_dump($article);
+        //die();
+        return $this->render('fr/communaute.html.twig', array(
+            'communautes' => $communautes,
+        ));
+    }
 }

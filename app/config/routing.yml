@@ -39,3 +39,8 @@ fr_avantage:
     path:     /avantage/{slug}
     defaults: { _controller: "AppBundle:Default:avantage" }
     methods:  [GET, POST]
+
+fr_communaute:
+    path:     /communaute/{slug}
+    defaults: { _controller: "AppBundle:Default:communaute" }
+    methods:  [GET, POST]
