@@ -1,0 +1,86 @@
+{% extends 'FOLayout.html.twig' %}
+
+{% block title %}
+  {% for contact in contacts %}
+      {{ contact.titre }}
+  {% endfor %}
+{% endblock %}
+
+{% block meta %}
+  {% for contact in contacts %}
+    <meta name="keywords" content="{{ contact.tags }}"  />
+    <meta name="description" content="{{ contact.resume }}">
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ contact.titre }}" />
+    <meta property="og:description" content="{{ contact.resume }}" />
+    <meta property="og:url" content="http://reseau-nzassa.org/contact/{{contact.slug}}" />
+    <meta property="og:site_name" content="Réseau Nzassa" />
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content="{{ contact.resume }}"/>
+    <meta name="twitter:title" content="{{ contact.titre }}"/>
+    <meta name="twitter:domain" content="Reseau Nzassa"/>
+  {% endfor %}
+{% endblock %}
+
+{% block body %}
+<div class="row">
+        <div class="col-xs-10 col-md-10 col-lg-8 col-lg-offset-2 col-md-offset-1 col-xs-offset-1 page-container">
+
+          <div class="row">
+            <!-- Colonne gauche -->
+            <div class="col-md-6  rnzassa-contenu">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                    <i class="fa fa-question-circle fa-2x"></i>
+                    Pour toutes vos questions et préoccupations, n'hesitez pas à nous contacter aux numeros fournis sur cette page, par mail ou en vous rendant directement dans nos locaux. Nous restons à votre disposition.
+                    <br>Tel: <span class="rnzassa-contact-tel">+225 52 79 92 37</span>
+                    <br>Email: <span class="rnzassa-contact-tel">info@reseau-nzassa.org</span>
+                    </div>
+                    <div class="panel-body">
+                        <form action="mail.php" class="ui form">
+                            <div class="field">
+                                <label for="">Nom & prénoms</label>
+                                <input type="text" name="nzassaNom" value="" placeholder="Votre nom et prénoms">
+                            </div>
+                            <div class="field">
+                                <label for="">Raison sociale</label>
+                                <input type="text" name="nzassaRaisonSociale" value="" placeholder="Raison sociale">
+                            </div>
+                            <div class="field">
+                                <label for="">Email</label>
+                                <input type="text" name="nzassaEmail" value="" placeholder="Votre email">
+                            </div>
+                            <div class="field">
+                                <label for="">Téléphone</label>
+                                <input type="text" name="nzassaTelephone" value="" placeholder="Votre numéro téléphone">
+                            </div>
+                            <div class="field">
+                                <label for="">Objet</label>
+                                <select name="nzassaObjet">
+									<option value="">--- Selectionnez l'objet du message</option>
+									<option value=""></option>}
+									<option value="Proposition de services">Proposition de service</option>
+									<option value="Proposition de compétences">Proposition de compétences</option>
+									<option value="Autres">Autres</option>
+								</select>
+                            </div>
+                            <div class="field">
+                                <label for="">Message</label>
+                                <textarea name="nzassaMessage"></textarea>
+                            </div>
+                            <button class="ui button disabled" type="submit">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Colonne droite -->
+            <div class="col-md-6 rnzassa-contenu">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.7351081584798!2d-4.0029688852351955!3d5.30396829615226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ebe460ceee65%3A0xe3fa89daf47dbf47!2sONG+MESAD!5e0!3m2!1sfr!2s!4v1477403741567" width="500" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

@@ -44,3 +44,8 @@ fr_communaute:
     path:     /communaute/{slug}
     defaults: { _controller: "AppBundle:Default:communaute" }
     methods:  [GET, POST]
+
+fr_contact:
+    path:     /contact/{slug}
+    defaults: { _controller: "AppBundle:Default:contact" }
+    methods:  [GET, POST]

@@ -237,13 +237,32 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        //$articles = $em->getRepository('AppBundle:Article')->findAll();
-        //$cle = 'Présentation';
+
         $communautes = $em->getRepository('AppBundle:Communaute')->getArticle($slug);
-        //var_dump($article);
-        //die();
+
         return $this->render('fr/communaute.html.twig', array(
             'communautes' => $communautes,
+        ));
+    }
+
+    /**
+     * Finds and displays a Contact entity.
+     *
+     */
+    public function contactAction($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $contacts = $em->getRepository('AppBundle:Contact')->getArticle($slug);
+
+        if ($slug === 'contacter-l-equipe') {
+          return $this->render('fr/contact-equipe.html.twig', array(
+              'contacts' => $contacts,
+          ));
+        }
+
+        return $this->render('fr/contact.html.twig', array(
+            'contacts' => $contacts,
         ));
     }
 }
