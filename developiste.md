@@ -352,3 +352,10 @@ Ainsi nous avons comme MLD
 
      Generation crud de la classe Domaine
      ** - [*- php bin/console doctrine:generate:crud AppBundle:Domaine -*]
+
+17°/ **Gestion de la rubrique Beneficiare et Photo**
+     Creation des classes Beneficiare & Photo
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Beneficiare/Photo -*]
+
+     Generation crud des classes Beneficiare et Photo
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Beneficiare/Photo -*]

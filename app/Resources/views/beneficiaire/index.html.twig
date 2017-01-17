@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Beneficiaires list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenoms</th>
+                <th>Slug</th>
+                <th>Naissance</th>
+                <th>Sexe</th>
+                <th>Nationalite</th>
+                <th>Matricule</th>
+                <th>Domicile</th>
+                <th>Flotte</th>
+                <th>Telephone</th>
+                <th>Famille</th>
+                <th>Enfant</th>
+                <th>Professionnel</th>
+                <th>Fonction</th>
+                <th>Bancaire</th>
+                <th>Banque</th>
+                <th>Dateouverture</th>
+                <th>Vague</th>
+                <th>Projet</th>
+                <th>Entreprise</th>
+                <th>Activite</th>
+                <th>Dateactivite</th>
+                <th>Inscriptionat</th>
+                <th>Modificationat</th>
+                <th>Inscritpar</th>
+                <th>Modifiepar</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for beneficiaire in beneficiaires %}
+            <tr>
+                <td><a href="{{ path('admin_beneficiaire_show', { 'id': beneficiaire.id }) }}">{{ beneficiaire.id }}</a></td>
+                <td>{{ beneficiaire.nom }}</td>
+                <td>{{ beneficiaire.prenoms }}</td>
+                <td>{{ beneficiaire.slug }}</td>
+                <td>{{ beneficiaire.naissance }}</td>
+                <td>{{ beneficiaire.sexe }}</td>
+                <td>{{ beneficiaire.nationalite }}</td>
+                <td>{{ beneficiaire.matricule }}</td>
+                <td>{{ beneficiaire.domicile }}</td>
+                <td>{{ beneficiaire.flotte }}</td>
+                <td>{{ beneficiaire.telephone }}</td>
+                <td>{{ beneficiaire.famille }}</td>
+                <td>{{ beneficiaire.enfant }}</td>
+                <td>{{ beneficiaire.professionnel }}</td>
+                <td>{{ beneficiaire.fonction }}</td>
+                <td>{% if beneficiaire.bancaire %}Yes{% else %}No{% endif %}</td>
+                <td>{{ beneficiaire.banque }}</td>
+                <td>{{ beneficiaire.dateouverture }}</td>
+                <td>{{ beneficiaire.vague }}</td>
+                <td>{{ beneficiaire.projet }}</td>
+                <td>{{ beneficiaire.entreprise }}</td>
+                <td>{% if beneficiaire.activite %}Yes{% else %}No{% endif %}</td>
+                <td>{{ beneficiaire.dateactivite }}</td>
+                <td>{{ beneficiaire.inscriptionAt }}</td>
+                <td>{{ beneficiaire.modificationAt }}</td>
+                <td>{{ beneficiaire.inscritPar }}</td>
+                <td>{{ beneficiaire.modifiePar }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_beneficiaire_show', { 'id': beneficiaire.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_beneficiaire_edit', { 'id': beneficiaire.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_beneficiaire_new') }}">Create a new beneficiaire</a>
+        </li>
+    </ul>
+{% endblock %}
