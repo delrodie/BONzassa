@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}Réseau Nzassa: Plus grand réseau des jeunes entrepreneurs de Côte d'Ivoire{% endblock %}
+    </title>
+
+    <meta name="keywords" content="Côte d'ivoire, Abidan, entrepreneurs, jeunes, pme, financement "  />
+    <meta name="description" content="C’est un réseau qui rassemble les jeunes entrepreneurs de différents secteurs d’activités (commerce, élevage, services…) qui s’engagent ensemble à réussir leur projet.">
+    <meta name="revisit" content="7 days" />
+    <meta name="revisit-after" content="30 days">
+    <meta name="Author" content="Eden'Art, Delrodie AMOIKON">
+    <meta name="Copyright" content="www.reseau-nzassa.org">
+    <meta name="Content-Language" content="FR">
+    <meta name="distribution" content="global" />
+    <meta name="Audience" content="All" />
+    <meta name="Robots" content="full">
+
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ asset('ressources/vendor/css/components.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('ressources/vendor/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('ressources/vendor/materialize/css/materialize.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('ressources/vendor/font-awesome-4.5.0/css/font-awesome.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('ressources/css/rnzassa.css')}}">
+
+  <link rel="shortcut icon" href="{{ asset('ressources/images/favicon.png')}}" />
+</head>
+<body>
+
+
+  <!-- NavBar -->
+  <div class="navbar-fixed">
+      <!-- SousMenu -->
+      <ul id="presentation" class="dropdown-content">
+        {{ render(url('fr_accueil_menu_presentation')) }}
+      </ul>
+      <ul id="avantage" class="dropdown-content">
+        {{ render(url('fr_accueil_menu_avantage')) }}
+      </ul>
+      <ul id="communaute" class="dropdown-content">
+        {{ render(url('fr_accueil_menu_communaute')) }}
+      </ul>
+      <ul id="contact" class="dropdown-content">
+        {{ render(url('fr_accueil_menu_contact')) }}
+      </ul>
+      <!-- \SousMenu -->
+      <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">&nbsp; &nbsp;<img src="ressources/images/logonzassa.png" alt="" width="200px"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Accueil</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="presentation">Présentation<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="avantage">Avantages<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="communaute">Communautés<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="mobile.html">Evenements</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="contact">Contact<i class="material-icons right">arrow_drop_down</i></a></li>
+
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="sass.html">Accueil</a></li>
+          <li><a href="presentation.php">Presentation</a></li>
+          <li><a href="collapsible.html">Avantages</a></li>
+          <li><a href="">Communautés</a></li>
+          <li><a href="mobile.html">Evenements</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- \NavBar -->
+
+  <!-- Caroussel -->
+  <div class="slider rnzassa-slider">
+    {{ render(url('fr_accueil_slider')) }}
+  </div>
+  <!-- \Caroussel -->
+
+  <!-- Container -->
+    <div class="rnzassa-intro-container">
+      <div class="row">
+        <div class="col s12 m10 offset-m1">
+          <div class="row">
+            <div class="col m7 col-gauche">
+              {{ render(url('fr_accueil_presentation')) }}
+              <div class="row col-gauche">
+                <div class="col s4">
+                  <a href="marche.php"><img src="ressources/images/accueil/marche.png" alt="" class="img-responsive"></a>
+                </div>
+                <div class="col s4">
+                  <a href="financement.php"><img src="ressources/images/accueil/financement.png" alt="" class="img-responsive"></a>
+                </div>
+                <div class="col s4">
+                  <a href="soutien.php"><img src="ressources/images/accueil/soutien.png" alt="" class="img-responsive"></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col m5 col-droite">
+              <img src="ressources/images/logonzassa.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Les domaines -->
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 rnzassa-intro-domaine-tuile">
+          <h2>Nos domaines</h2>
+          <div class="row">
+            <div class="col-xs-6 col-md-3">
+              <a href="#" title="" class="tuile">
+                <div class="tuile-couverture">
+                  <img src="ressources/images/domaines/agro-alimentaire.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="tuile-info bordure-verte">
+                  <h4>Agroalimentaire</h4>
+                  <p>45</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-6 col-md-3 tuile-colonne">
+              <a href="#" title="" class="tuile">
+                <div class="tuile-couverture">
+                  <img src="ressources/images/domaines/commerce.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="tuile-info bordure-orange">
+                  <h4>Commerce</h4>
+                  <p>22</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-6 col-md-3 tuile-colonne">
+              <a href="#" title="" class="tuile">
+                <div class="tuile-couverture">
+                  <img src="ressources/images/domaines/couture.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="tuile-info bordure-rouge">
+                  <h4>Couture / coiffure</h4>
+                  <p>22</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-6 col-md-3 tuile-colonne">
+              <a href="#" title="" class="tuile">
+                <div class="tuile-couverture">
+                  <img src="ressources/images/domaines/elevage.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="tuile-info bordure-noire">
+                  <h4>Elevage</h4>
+                  <p>22</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-6 col-md-3 tuile-colonne">
+              <a href="#" title="" class="tuile">
+                <div class="tuile-couverture">
+                  <img src="ressources/images/domaines/restauration.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="tuile-info bordure-verte">
+                  <h4>Restauration</h4>
+                  <p>22</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-6 col-md-3 tuile-colonne">
+              <a href="#" title="" class="tuile">
+                <div class="tuile-couverture">
+                  <img src="ressources/images/domaines/service.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="tuile-info bordure-orange">
+                  <h4>Service</h4>
+                  <p>22</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-6 col-md-3 tuile-colonne">
+              <a href="#" title="" class="tuile">
+                <div class="tuile-couverture">
+                  <img src="ressources/images/domaines/thimo.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="tuile-info bordure-rouge">
+                  <h4>Thimo</h4>
+                  <p>22</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-6 col-md-3 tuile-colonne">
+              <a href="#" title="" class="tuile">
+                <div class="tuile-couverture">
+                  <img src="ressources/images/domaines/transport.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="tuile-info bordure-noire">
+                  <h4>Transport</h4>
+                  <p>22</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- \Les domaines -->
+
+
+
+
+
+    </div>
+  <!-- \Container -->
+
+  <!-- FOOTER -->
+  <div class="nzassa-footer">
+    <div class="nzassa-plan">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="row">
+            <div class="col-xs-6 col-md-4">
+              <h4>Réseau</h4>
+              <div><a href="#">Adherer</a></div>
+              <div><a href="#">Investir</a></div>
+              <div><a href="#">Annuaire des membres</a></div>
+              <div><a href="#">Communauté</a></div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <h4>Qui sommes-nous ?</h4>
+              <div><a href="presentation.php">Presentation</a></div>
+              <div><a href="#">Investisseurs</a></div>
+              <div><a href="#">Formateurs/Encadreurs</a></div>
+              <div><a href="#">Comment ça marche</a></div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <h4>Nous contacter</h4>
+              <div><a href="#">Obtenir de l'aide</a></div>
+              <div><a href="#">Demande de partenaariat</a></div>
+              <div><a href="publicite.php">Faire de la publicité</a></div>
+              <div><a href="contact.php">Contacter l'équipe</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      .
+    </div>
+    <div class="nzassa-copyright">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          &copy; Copyright Reseau Nzassa, Novembre 2016 | Tous droits reservés
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- \FOOTER -->
+
+	<!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+  <script type="text/javascript" src="{{ asset('ressources/js/jquery-2.1.1.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('ressources/vendor/materialize/js/materialize.js')}}"></script>
+  <script type="text/javascript" src="{{ asset('ressources/vendor/bootstrap.min.js')}}"></script>
+
+	<script type="">
+		  $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+      $(".button-collapse").sideNav();
+      $('.carousel').carousel()
+    });
+	</script>
+  <script type='text/javascript'>
+	var onWebChat={ar:[], set: function(a,b){if (typeof onWebChat_==='undefined'){this.ar.
+	push([a,b]);}else{onWebChat_.set(a,b);}},get:function(a){return(onWebChat_.get(a));},w
+	:(function(){ var ga=document.createElement('script'); ga.type = 'text/javascript';ga.
+	async=1;ga.src='//www.onwebchat.com/clientchat/86df7f0cf6fe3065ac2be7276915503c';
+	var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})()}
+	</script>
+</body>
+</html>

@@ -21,7 +21,7 @@
         <tbody>
         {% for accueil in accueils %}
             <tr>
-                <td><a href="{{ path('admin_accueil_show', { 'id': accueil.id }) }}">{{ accueil.id }}</a></td>
+                <td><a href="{{ path('admin_accueil_show', { 'slug': accueil.slug }) }}">{{ accueil.slug }}</a></td>
                 <td>{{ accueil.titre }}</td>
                 <td>{{ accueil.slug }}</td>
                 <td>{{ accueil.contenu }}</td>
@@ -33,10 +33,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin_accueil_show', { 'id': accueil.id }) }}">show</a>
+                            <a href="{{ path('admin_accueil_show', { 'slug': accueil.slug }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('admin_accueil_edit', { 'id': accueil.id }) }}">edit</a>
+                            <a href="{{ path('admin_accueil_edit', { 'slug': accueil.slug }) }}">edit</a>
                         </li>
                     </ul>
                 </td>

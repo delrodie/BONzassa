@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Réseau Nzassa: réseau des jeunes entrepreneurs de Côte d'Ivoire{% endblock %}</title>
+    {% block meta %}
+      <meta name="keywords" content="Côte d'ivoire, Abidan, entrepreneurs, jeunes, pme, financement "  />
+      <meta name="description" content="C’est un réseau qui rassemble les jeunes entrepreneurs de différents secteurs d’activités (commerce, élevage, services…) qui s’engagent ensemble à réussir leur projet.">
+      <meta property="og:locale" content="fr_FR" />
+      <meta property="og:locale:alternate" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Réseau Nzassa: réseau des jeunes entrepreneurs de Côte d'Ivoire" />
+      <meta property="og:description" content="C’est un réseau qui rassemble les jeunes entrepreneurs de différents secteurs d’activités (commerce, élevage, services…) qui s’engagent ensemble à réussir leur projet." />
+      <meta property="og:url" content="http://reseau-nzassa.org/" />
+      <meta property="og:site_name" content="Réseau Nzassa" />
+      <meta name="twitter:card" content="summary"/>
+      <meta name="twitter:description" content="C’est un réseau qui rassemble les jeunes entrepreneurs de différents secteurs d’activités (commerce, élevage, services…) qui s’engagent ensemble à réussir leur projet."/>
+      <meta name="twitter:title" content="Réseau Nzassa: réseau des jeunes entrepreneurs de Côte d'Ivoire"/>
+      <meta name="twitter:domain" content="Reseau Nzassa"/>
+    {% endblock %}
+    <meta name="revisit" content="7 days" />
+    <meta name="revisit-after" content="30 days">
+    <meta name="Author" content="Eden'Art, Delrodie AMOIKON">
+    <meta name="Copyright" content="www.reseau-nzassa.org">
+    <meta name="Content-Language" content="FR">
+    <meta name="distribution" content="global" />
+    <meta name="Audience" content="All" />
+    <meta name="Robots" content="full">
+
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--<link rel="stylesheet" type="text/css" href="ressources/vendor/foundation/css/foundation.min.css">-->
+  <link rel="stylesheet" type="text/css" href="{{ asset('ressources/vendor/css/components.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('ressources/vendor/css/bootstrap.min.css')}}">
+  <!--<link rel="stylesheet" type="text/css" href="ressources/vendor/materialize/css/materialize.css">-->
+  <link rel="stylesheet" type="text/css" href="{{ asset('ressources/vendor/semantic/dist/semantic.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('ressources/vendor/font-awesome-4.5.0/css/font-awesome.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('ressources/css/rnzassa.css')}}">
+
+  <link rel="shortcut icon" href="{{ asset('ressources/images/favicon.png')}}" />
+
+
+</head>
+<body>
+
+  <section id="rnzassa-section-menu">
+    <div class="navbar-fixed-top">
+      <div class="row menu-information">
+        <div class="col-xs-4 col-md-8 col-lg-9 text-right">
+          <a href="#" title="">
+            <i class="fa fa-info-circle fa-lg"></i> Comment ça marche ?
+          </a>
+        </div>
+        <div class="col-xs-4 col-md-2 col-lg-1 text-center">
+          <a href="#" title="">
+            <i class="fa fa-support fa-lg"></i> Support
+          </a>
+        </div>
+        <div class="col-xs-4 col-md-2 col-lg-2">
+          <a href="#" title="">
+            <i class="fa fa-user fa-lg"></i> Connexion
+          </a>
+        </div>
+      </div>
+      <!-- Pour Desktop -->
+      <div class="row hidden-xs">
+        <div class="col-xs-12">
+
+          <div class="ui stackable menu">
+            <div class="ui container sans-bordure">
+              <a href="#" class="header item">
+                <img class="logo" src="{{ asset('ressources/images/favicon.png')}}">
+                Reseau Nzassa
+              </a>
+              <a href="{{ path('homepage')}}" class="right item">Accueil</a>
+              <div class="ui right simple dropdown item">
+                Qui sommes-nous ? <i class="dropdown icon"></i>
+                <div class="menu">
+                  {{ render(url('fr_menu_presentation'))}}
+                </div>
+              </div>
+              <div class="ui right simple dropdown item">
+                Avantages <i class="dropdown icon"></i>
+                <div class="menu">
+                  {{ render(url('fr_menu_avantage')) }}
+                </div>
+              </div>
+              <div class="ui right simple dropdown item">
+                Communauté <i class="dropdown icon"></i>
+                <div class="menu">
+                  {{ render(url('fr_menu_communaute')) }}
+                </div>
+              </div>
+              <a href="#" class="right item">Evenements</a>
+              <div class="ui right simple dropdown item">
+                Contact <i class="dropdown icon"></i>
+                <div class="menu">
+                  {{ render(url('fr_menu_contact')) }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- \DeskTop -->
+      <!-- Pour mobile -->
+      <div class="row visible-xs-* hidden-sm hidden-md hidden-lg">
+        <div class="col-xs-12">
+
+          <div class="ui menu">
+            <div class="ui container">
+              <a href="#" class="header item">
+                <img class="logo" src="ressources/images/favicon.png">
+                Réseau Nzassa
+              </a>
+              <div class="ui simple dropdown item">
+                Menu <i class="dropdown icon"></i>
+                <div class="menu">
+                  <a class="item" href="accueil.php">Accueil</a>
+                  <div class="item">
+                    <i class="dropdown icon"></i>
+                    Qui sommes-nous ?
+                    <div class="menu">
+                      {{ render(url('fr_menu_presentation')) }}
+                    </div>
+                  </div>
+                  <div class="item">
+                    <i class="dropdown icon"></i>
+                    Avantages
+                    <div class="menu">
+                      {{ render(url('fr_menu_avantage')) }}
+                    </div>
+                  </div>
+                  <div class="item">
+                    <i class="dropdown icon"></i>
+                    Communauté
+                    <div class="menu">
+                      {{ render(url('fr_menu_communaute')) }}
+                    </div>
+                  </div>
+                  <a class="item" href="#">Evenements</a>
+                  <div class="item">
+                    <i class="dropdown icon"></i>
+                    Contact
+                    <div class="menu">
+                      {{ render(url('fr_menu_contact')) }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- \Mobile -->
+    </div>
+  </section>
+
+  <!-- Container -->
+    <div class="rnzassa-page-container">
+
+      {% block body %}{% endblock %}
+
+      <!-- Statistiques -->
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3 rnzassa-statistique">
+          <div class="row">
+            <div class="col-xs-6 text-center">
+              <div class="ui statistic">
+                <div class="value">2.500</div>
+                <div class="label">Membres</div>
+              </div>
+            </div>
+            <div class="col-xs-6 text-center">
+              <div class="ui statistic">
+                <div class="value">2.500</div>
+                <div class="label">clients-entreprises</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- \Statistiques -->
+
+    </div>
+  <!-- \Container -->
+
+  <!-- FOOTER -->
+  <div class="nzassa-footer">
+    <div class="nzassa-plan">
+      <div class="row">
+        <div class="col-xs-10 col-md-8 col-md-offset-2 col-xs-offset-1">
+          <div class="row">
+            <div class="col-xs-6 col-md-4">
+              <h4>Réseau</h4>
+              <div><a href="#">Adherer</a></div>
+              <div><a href="#">Investir</a></div>
+              <div><a href="#">Annuaire des membres</a></div>
+              <div><a href="#">Communauté</a></div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <h4>Qui sommes-nous ?</h4>
+              <div><a href="presentation.php">Presentation</a></div>
+              <div><a href="#">Investisseurs</a></div>
+              <div><a href="#">Formateurs/Encadreurs</a></div>
+              <div><a href="#">Comment ça marche</a></div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <h4>Nous contacter</h4>
+              <div><a href="#">Obtenir de l'aide</a></div>
+              <div><a href="#">Demande de partenariat</a></div>
+              <div><a href="publicite.php">Faire de la publicité</a></div>
+              <div><a href="#">Contacter l'équipe</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      .
+    </div>
+    <div class="nzassa-copyright">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          &copy; Copyright Reseau Nzassa, 2016-2017 | Tous droits reservés
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- \FOOTER -->
+
+  <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+  <script type="text/javascript" src="{{ asset('ressources/js/jquery-2.1.1.min.js') }}"></script>
+  <!--<script type="text/javascript" src="ressources/vendor/materialize/js/materialize.js"></script>  -->
+  <script type="text/javascript" src="{{ asset('ressources/vendor/js/bootstrap.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('ressources/vendor/semantic/dist/semantic.min.js') }}"></script>
+
+  <script type="">
+      $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+      $(".button-collapse").sideNav();
+      $('.carousel').carousel();
+  </script>
+  <script type='text/javascript'>
+  var onWebChat={ar:[], set: function(a,b){if (typeof onWebChat_==='undefined'){this.ar.
+  push([a,b]);}else{onWebChat_.set(a,b);}},get:function(a){return(onWebChat_.get(a));},w
+  :(function(){ var ga=document.createElement('script'); ga.type = 'text/javascript';ga.
+  async=1;ga.src='//www.onwebchat.com/clientchat/86df7f0cf6fe3065ac2be7276915503c';
+  var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})()}
+  </script>
+
+</body>
+</html>
