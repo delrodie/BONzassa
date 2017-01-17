@@ -1,6 +1,10 @@
-==================================
-===== BACKOFFICE DES WEBSITE =====
-==================================
+=== =============================================== ===
+=======   Platefrome de gestion des membres et   ======
+======== BackOffice du website du RESEAU NZASSA =======
+=========  Entreprises: ONG MESAD & EDEN'ART   ========
+==========      Auteur: Delrodie AMOIKON      =========
+=== =============================================== ===
+
 
 /*****
 *** @Author: Delrodie AMOIKON
@@ -287,7 +291,7 @@ Ainsi nous avons comme MLD
      Creation des classes Publicite et ImgPublicite
      ** - [*- php bin/console doctrine:generate:entity AppBundle:Publicite/ImgPublicite -*]
 
-12°/ **Gestion de la rubrique Accueil**
+13°/ **Gestion de la rubrique Accueil**
      Creation de la classe Accueil
      ** - [*- php bin/console doctrine:generate:entity AppBundle:Accueil -*]
 
@@ -300,4 +304,10 @@ Ainsi nous avons comme MLD
      Generation CRUD des entités Slider et ImgSlider
      ** - [*- php bin/console doctrine:generate:crud AppBundle:Slider/ImgSlider -*]
 
-     Mise en pages des classes Slider et ImgSlider 
+     Mise en pages des classes Slider et ImgSlider
+
+
+===> **INTEGRATION DE L'ANNUAIRE DES MEMBRES**
+
+14°/ **Mise a jour du layout principal**
+     Integration de la rubrique ANNUAIRE puis des sous menus zone-domaine-Beneficiaires et Formateurs 
