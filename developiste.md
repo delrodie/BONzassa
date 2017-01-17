@@ -310,4 +310,9 @@ Ainsi nous avons comme MLD
 ===> **INTEGRATION DE L'ANNUAIRE DES MEMBRES**
 
 14°/ **Mise a jour du layout principal**
-     Integration de la rubrique ANNUAIRE puis des sous menus zone-domaine-Beneficiaires et Formateurs 
+     Integration de la rubrique ANNUAIRE puis des sous menus zone-domaine-Beneficiaires et Formateurs
+
+15°/ **Gestion de la rubrique Zone**
+     Creation de la classe Zone
+     ** - Zone(Libelle, code, desactivation)
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Zone -*]
