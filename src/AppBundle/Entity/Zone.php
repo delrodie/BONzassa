@@ -41,7 +41,7 @@ class Zone
     /**
      * @var string
      *
-     * @Gedmo\Slug(fields={"titre"})
+     * @Gedmo\Slug(fields={"libelle"})
      * @ORM\Column(name="slug", type="string", length=255, nullable=true)
      */
     private $slug;
@@ -57,7 +57,7 @@ class Zone
      * @var string
      *
      * @Gedmo\Blameable(on="create")
-     * @ORM\Column(name="publie_par", type="string", length=255, nullable=true)
+     * @ORM\Column(name="publie_par", type="string", length=25, nullable=true)
      */
     private $publiePar;
 
@@ -105,7 +105,7 @@ class Zone
      */
     public function setLibelle($libelle)
     {
-        $this->libelle = $libelle;
+        $this->libelle = strtoupper($libelle);
 
         return $this;
     }

@@ -316,3 +316,32 @@ Ainsi nous avons comme MLD
      Creation de la classe Zone
      ** - Zone(Libelle, code, desactivation)
      ** - [*- php bin/console doctrine:generate:entity AppBundle:Zone -*]
+
+     Generation CRUD de la classe Zone
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Zone -*]
+
+     Modification du form de la classe zone Form/ZoneType
+
+     Creation de la requete de selection du code
+     ** - [*-
+             public function getDernierId()
+             {
+                 $qb = $this->createQueryBuilder('z')
+                     ->select('count(z.id)')
+                 ;
+
+                 $query = $qb->getQuery();
+
+                 $recup =  $query->getSingleScalarResult();
+
+                 // Si compteur est egal a 0 alors initialiser
+                 if ($recup < 10){
+                     $suffixe = $recup + 1;
+                     return $code = '0'.$suffixe;
+                 }
+                 else{
+                     return $code = $recup;
+                 }
+
+             }
+             -*]
