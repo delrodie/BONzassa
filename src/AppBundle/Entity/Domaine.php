@@ -27,7 +27,7 @@ class Domaine
      * @var string
      *
      * @Gedmo\Versioned
-     * @ORM\Column(name="libelle", type="string", length=15)
+     * @ORM\Column(name="libelle", type="string", length=25)
      */
     private $libelle;
 
@@ -105,7 +105,7 @@ class Domaine
      */
     public function setLibelle($libelle)
     {
-        $this->libelle = $libelle;
+        $this->libelle = strtoupper($libelle);
 
         return $this;
     }
