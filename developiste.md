@@ -345,3 +345,7 @@ Ainsi nous avons comme MLD
 
              }
              -*]
+
+16°/ **Gestion de la rubrique Domaine**
+     Creation de la classe Domaine
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Domaine -*]
