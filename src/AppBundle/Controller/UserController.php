@@ -55,7 +55,7 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush($user);
 
-            return $this->redirectToRoute('admin_user_show', array('id' => $user->getId()));
+            return $this->redirectToRoute('admin_user_index');
         }
 
         return $this->render('user/new.html.twig', array(
@@ -95,7 +95,7 @@ class UserController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_user_edit', array('id' => $user->getId()));
+            return $this->redirectToRoute('admin_user_index');
         }
 
         return $this->render('user/edit.html.twig', array(
