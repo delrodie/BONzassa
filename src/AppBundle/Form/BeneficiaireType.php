@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 use AppBundle\Entity\Photo;
 use AppBundle\Form\PhotoType;
@@ -45,15 +46,7 @@ class BeneficiaireType extends AbstractType
                   ),
                   'required'  => false
             ))
-            ->add('sexe', ChoiceType::class, array(
-                'choices' => array(
-                  'Homme' => 'M',
-                  'Femme' => 'F'
-                ),
-                'required'  => true,
-                'placeholder' => 'Choisir le sexe',
-                'empty_data' => null
-            ))
+            ->add('sexe')
             ->add('nationalite', TextType::class, array(
                   'attr'  => array(
                       'class' => 'form-control',
@@ -81,15 +74,7 @@ class BeneficiaireType extends AbstractType
                   ),
                   'required'  => false
             ))
-            ->add('famille', ChoiceType::class, array(
-                'choices' => array(
-                  'Celibataire' => 'Celibataire',
-                  'Marié(e)'  =>  'Marié',
-                  'Divorcé(e)' => 'Divorcé',
-                  'Veuf/veuve'  =>  'Veuf/veuve'
-                ),
-                'placeholder'  => 'Choisir la situation matrimoniale'
-            ))
+            ->add('famille')
             ->add('enfant', TextType::class, array(
                   'attr'  => array(
                       'class' => 'form-control',
@@ -97,20 +82,7 @@ class BeneficiaireType extends AbstractType
                   ),
                   'required'  => false
             ))
-            ->add('professionnel', ChoiceType::class, array(
-                'choices' => array(
-                  'Employé(e)'  => 'Employé',
-                  'Sans emploi'  =>  'Sans emploi',
-                  'Autres'  =>  'Autres'
-                ),
-                'required'  => false,
-                'placeholder'=> 'Votre situation professionnelle',
-                'empty_data'  => null,
-                'attr'  => array(
-                    'class' => 'form-control',
-                    'autocomplete'  => 'off'
-                )
-            ))
+            ->add('professionnel')
             ->add('fonction', TextType::class, array(
                   'attr'  => array(
                       'class' => 'form-control',

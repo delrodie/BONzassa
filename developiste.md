@@ -359,3 +359,7 @@ Ainsi nous avons comme MLD
 
      Generation crud des classes Beneficiare et Photo
      ** - [*- php bin/console doctrine:generate:crud AppBundle:Beneficiare/Photo -*]
+
+18°/ **Installation StashBundle pour le cache**
+     Installation de StashBundle pour le cache dans le système
+     ** - [*- composer require tedivm/stash-bundle -*]

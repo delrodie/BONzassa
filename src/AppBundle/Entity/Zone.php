@@ -287,4 +287,8 @@ class Zone
     {
         return $this->modifieLe;
     }
+
+    public function __toString() {
+        return $this->getLibelle();
+    }
 }

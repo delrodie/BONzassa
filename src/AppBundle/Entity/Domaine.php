@@ -287,4 +287,8 @@ class Domaine
     {
         return $this->modifieLe;
     }
+
+    public function __toString() {
+        return $this->getLibelle();
+    }
 }
