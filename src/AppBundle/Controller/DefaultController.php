@@ -22,6 +22,15 @@ class DefaultController extends Controller
     }
 
     /**
+     * Acceuil admin
+     */
+    public function adminAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/index.html.twig');
+    }
+
+    /**
      * Slider
      */
     public function sliderAction()
