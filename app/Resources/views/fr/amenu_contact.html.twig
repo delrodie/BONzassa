@@ -1,0 +1,3 @@
+{% for contact in contacts %}
+<li><a href="{{ path('fr_contact', { 'slug': contact.slug }) }}">{{ contact.rubrique }}</a></li>
+{% endfor %}

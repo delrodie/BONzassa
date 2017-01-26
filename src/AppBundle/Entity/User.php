@@ -124,10 +124,10 @@ class User extends BaseUser {
         return $this;
     }
 
-    function setGroups(Collection $groups = null) {
+    /*function setGroups(Collection $groups = null) {
         if ($groups !== null)
             $this->groups = $groups;
-    }
+    }*/
 
     public function setRoles(array $roles = array()) {
         $this->roles = array();
@@ -138,6 +138,10 @@ class User extends BaseUser {
 
     public function hasGroup($name = '') {
         return in_array($name, $this->getGroupNames());
+    }
+
+    public function __toString() {
+        return $this->getEmail().' ('.$this->getUsername().')';
     }
 
 }

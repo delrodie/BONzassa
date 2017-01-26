@@ -103,3 +103,11 @@ bazinga_faker:
             number: 25
         AppBundle\Entity\Article:
             number: 15
+
+monolog:
+    handlers:
+        login:
+            type:               stream
+            path:               "%kernel.logs_dir%/auth.log"
+            level:              info
+            channels:           security

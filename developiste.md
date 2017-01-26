@@ -1,6 +1,10 @@
-==================================
-===== BACKOFFICE DES WEBSITE =====
-==================================
+=== =============================================== ===
+=======   Platefrome de gestion des membres et   ======
+======== BackOffice du website du RESEAU NZASSA =======
+=========  Entreprises: ONG MESAD & EDEN'ART   ========
+==========      Auteur: Delrodie AMOIKON      =========
+=== =============================================== ===
+
 
 /*****
 *** @Author: Delrodie AMOIKON
@@ -245,3 +249,117 @@ Ainsi nous avons comme MLD
 7°/ **Installation de StofDoctrineExtensionsBundle**
     Installation de StofDoctrineExtensionsBundle
     ** - [*- https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/symfony2.md -*]
+
+8°/ **Gestion de la rubrique Presentation**
+    Creation de la classe Presentation
+    ** - [*- php bin/console doctrine:generate:entity AppBundle:Presentation -*]
+
+    Mise a jour de la classe Presentation avec insertion de Timestampable
+    ** - [*- https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/timestampable.md -*]
+
+    Mise a jour de la classe Presentation avec insertion de Blameable
+    ** - [*- https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/blameable.md -*]
+
+    Mise a jour de la classe Presentation avec insertion de Sluggable
+    ** - [*- https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/sluggable.md -*]
+
+    Generation crud de la classe Presentation
+    ** - [*- php bin/console doctrine:generate:crud AppBundle:Presentation -*]
+
+9°/ **Gestion de la rubrique Avantages**
+    Creation de la classe Avantages
+    ** - [*- php bin/console doctrine:generate:entity AppBundle:Avantage -*]
+
+    Generation CRUD des classes ImgAvantage et Avantage
+    ** - [*- php bin/console doctrine:generate:crud AppBundle:ImgAvantage/Avantage -*]
+
+10°/ **Gestion de la rubrique Communuaté**
+     Creation des classes Communaute et ImgCommunaute
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Communaute -*]
+
+     Generation CRUD des classes Communaute et ImgCommunaute
+     ** - [*- php bin/console doctrine:gnerate:crud AppBundle:Communaute/ImgCommunaute -*]
+
+11°/ **Gestion de la rubrique Contact**
+     Creation des classes Contact et ImgContat
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Contcat/ImgContact -*]
+
+     Generation CRUD des classes Contact et ImgContact
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Contcat/ImgContact -*]
+
+12°/ **Gestion de la rubrique Publicite**
+     Creation des classes Publicite et ImgPublicite
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Publicite/ImgPublicite -*]
+
+13°/ **Gestion de la rubrique Accueil**
+     Creation de la classe Accueil
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Accueil -*]
+
+     Generation CRUD de la classe Accueil
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Accueil -*]
+
+     Creation des classes Slider et ImgSlider
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Slider/ImgSlider -*]
+
+     Generation CRUD des entités Slider et ImgSlider
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Slider/ImgSlider -*]
+
+     Mise en pages des classes Slider et ImgSlider
+
+
+===> **INTEGRATION DE L'ANNUAIRE DES MEMBRES**
+
+14°/ **Mise a jour du layout principal**
+     Integration de la rubrique ANNUAIRE puis des sous menus zone-domaine-Beneficiaires et Formateurs
+
+15°/ **Gestion de la rubrique Zone**
+     Creation de la classe Zone
+     ** - Zone(Libelle, code, desactivation)
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Zone -*]
+
+     Generation CRUD de la classe Zone
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Zone -*]
+
+     Modification du form de la classe zone Form/ZoneType
+
+     Creation de la requete de selection du code
+     ** - [*-
+             public function getDernierId()
+             {
+                 $qb = $this->createQueryBuilder('z')
+                     ->select('count(z.id)')
+                 ;
+
+                 $query = $qb->getQuery();
+
+                 $recup =  $query->getSingleScalarResult();
+
+                 // Si compteur est egal a 0 alors initialiser
+                 if ($recup < 10){
+                     $suffixe = $recup + 1;
+                     return $code = '0'.$suffixe;
+                 }
+                 else{
+                     return $code = $recup;
+                 }
+
+             }
+             -*]
+
+16°/ **Gestion de la rubrique Domaine**
+     Creation de la classe Domaine
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Domaine -*]
+
+     Generation crud de la classe Domaine
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Domaine -*]
+
+17°/ **Gestion de la rubrique Beneficiare et Photo**
+     Creation des classes Beneficiare & Photo
+     ** - [*- php bin/console doctrine:generate:entity AppBundle:Beneficiare/Photo -*]
+
+     Generation crud des classes Beneficiare et Photo
+     ** - [*- php bin/console doctrine:generate:crud AppBundle:Beneficiare/Photo -*]
+
+18°/ **Installation StashBundle pour le cache**
+     Installation de StashBundle pour le cache dans le système
+     ** - [*- composer require tedivm/stash-bundle -*]

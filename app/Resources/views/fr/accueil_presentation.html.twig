@@ -1,0 +1,6 @@
+{% for presentation in presentations %}
+<h5>{{ presentation.titre }}</h5>
+<div class="text-justify">
+  {{ presentation.contenu|raw }}
+</div>
+{% endfor %}

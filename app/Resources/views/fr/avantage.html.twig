@@ -1,0 +1,88 @@
+{% extends 'FOLayout.html.twig' %}
+
+{% block title %}
+  {% for avantage in avantages %}
+      {{ avantage.titre }}
+  {% endfor %}
+{% endblock %}
+
+{% block meta %}
+  {% for avantage in avantages %}
+    <meta name="keywords" content="{{ avantage.tags }}"  />
+    <meta name="description" content="{{ avantage.resume }}">
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ avantage.titre }}" />
+    <meta property="og:description" content="{{ avantage.resume }}" />
+    <meta property="og:url" content="http://reseau-nzassa.org/avantage/{{avantage.slug}}" />
+    <meta property="og:site_name" content="Réseau Nzassa" />
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content="{{ avantage.resume }}"/>
+    <meta name="twitter:title" content="{{ avantage.titre }}"/>
+    <meta name="twitter:domain" content="Reseau Nzassa"/>
+  {% endfor %}
+{% endblock %}
+
+{% block body %}
+<div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-8 col-lg-offset-2 col-md-offset-1 page-container">
+            {% for avantage in avantages %}
+            <div class="row">
+              <!-- Colonne gauche -->
+              <div class="col-sm-8 col-md-7 text-justify rnzassa-contenu">
+                <h3>{{ avantage.titre }}</h3>
+                {% if avantage.image %}
+                    <img src="{{ asset('ressources/images/avantages/' ~ avantage.image.id ~ '.' ~ avantage.image.url )}}" alt="{{ avantage.titre }}" class="img-responsive img-a-gauche img200" />
+                {% else %}
+                    <img src="{{ asset('ressources/images/logonzassa.png')}}" alt="{{ avantage.titre }}" class="img-responsive img-a-gauche img400" />
+                {% endif %}
+                {{ avantage.contenu|raw }}
+              </div>
+              <!-- Colonne droite -->
+              <div class="col-sm-4 col-md-5 rnzassa-actualite">
+                <h3>Actualités/evenemenets</h3>
+                <div class="row">
+                  <div class="col-xs-12">
+                    {{ render(url('fr_flash_evenement')) }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 rnzassa-pub">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                          <div class="item active">
+                            <img src="{{ asset('ressources/images/logonzassa.png')}}" alt="Reseau Nzassa" class="img-responsive">
+                            <div class="carousel-caption">
+                              Faire votre publicité
+                            </div>
+                          </div>
+                          {{ render(url('fr_flash_publicite')) }}
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+{% endblock %}

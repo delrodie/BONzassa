@@ -1,0 +1,274 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Beneficiaire
+ *
+ * @ORM\Table(name="beneficiaire")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BeneficiaireRepository")
+ * @Gedmo\Loggable
+ */
+class Beneficiaire
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @Gedmo\Versioned
+     * @ORM\Column(name="nom", type="string", length=75)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @Gedmo\Versioned
+     * @ORM\Column(name="prenoms", type="string", length=255)
+     */
+    private $prenoms;
+
+    /**
+     * @var string
+     *
+     * @Gedmo\Slug(fields={"nom", "prenoms"})
+     * @ORM\Column(name="slug", type="string", length=255)
+     */
+    private $slug;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="naissance", type="string", length=10)
+     */
+    private $naissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sexe", type="string", length=2)
+     */
+    private $sexe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nationalite", type="string", length=125)
+     */
+    private $nationalite;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="matricule", type="string", length=12, unique=true)
+    */
+        private $matricule;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="domicile", type="string", length=255)
+     */
+    private $domicile;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="flotte", type="string", length=8)
+     */
+    private $flotte;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=8)
+     */
+    private $telephone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="famille", type="string", length=15)
+     */
+    private $famille;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="enfant", type="integer", nullable=true, options={"default":0})
+     */
+    private $enfant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="professionnel", type="string", length=15)
+     */
+    private $professionnel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fonction", type="string", length=125, nullable=true)
+     */
+    private $fonction;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="bancaire", type="boolean")
+     */
+    private $bancaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="banque", type="string", length=75, nullable=true)
+     */
+    private $banque;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dateouverture", type="string", length=10, nullable=true )
+     */
+    private $dateouverture;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vague", type="string", length=2)
+     */
+    private $vague;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="projet", type="text")
+     */
+    private $projet;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="entreprise", type="string", length=125)
+     */
+    private $entreprise;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="activite", type="boolean")
+     */
+    private $activite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dateactivite", type="string", length=10)
+     */
+    private $dateactivite;
+
+    /**
+     * @var \DateTime
+     *
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(name="inscriptionAt", type="datetimetz")
+     */
+    private $inscriptionAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(name="modification_at", type="datetimetz", nullable=true)
+     */
+    private $modificationAt;
+
+    /**
+     * @var string
+     *
+     * @Gedmo\Blameable(on="create")
+     * @ORM\Column(name="publie_par", type="string", length=25, nullable=true)
+     */
+    private $inscritPar;
+
+    /**
+     * @var string
+     *
+     * @Gedmo\Blameable(on="update")
+     * @ORM\Column(name="modifie_par", type="string", length=25, nullable=true)
+     */
+    private $modifiePar;
+
+    // Gestion des relations
+    /**
+    * @ORM\OneToOne(targetEntity="AppBundle\Entity\User")
+    * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+    */
+    private $user;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Zone", inversedBy="beneficiaires")
+    * @ORM\JoinColumn(name="zone_id", referencedColumnName="id")
+    */
+    private $zone;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Domaine", inversedBy="beneficiaires")
+    * @ORM\JoinColumn(name="domaine_id", referencedColumnName="id")
+    */
+     private $domaine;
+
+     /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Photo", cascade={"persist"})
+     */
+     private $photo;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return Beneficiaire
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+}
